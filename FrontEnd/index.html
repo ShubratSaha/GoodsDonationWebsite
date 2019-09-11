@@ -1,0 +1,3076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>giftAid</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+
+<style>
+    .topNavBar {
+        background-image: linear-gradient(-90deg, #1B4F72, #2980B9);
+        border-radius: 0px;
+        border: 1px solid #7FB3D5;
+        margin-bottom: 0;
+    }
+
+    #topNavColor {
+        color: white;
+    }
+
+    #topNavColor:hover {
+        color: lightblue;
+    }
+
+    .backgrnd {
+        font-family: "Trebuchet MS", Helvetica, sans-serif;
+        color:black;
+        overflow-x: hidden;
+    }
+    
+    .togBar{
+        border:0;
+    }
+    .togBar:hover, .togBar:focus{
+        background-color: #2980B9 !important;
+    }
+    .headDiv{
+        background-image: linear-gradient(-90deg, #1B4F72, #2980B9);
+        min-height: 250px;
+        overflow-x: hidden;
+        vertical-align: center;
+        text-align: center;
+        color:white;
+    }
+    .lastDiv{
+        background-image: linear-gradient(-90deg, #1B4F72, #2980B9);
+        height: 350px;
+        overflow-x: hidden;
+        vertical-align: center;
+        text-align: center;
+        color:white;
+    }
+    .title{
+        margin-bottom: 10px;
+    }
+    .sub-title{
+        margin-top:10px;
+    }
+    .searchBar{
+        width: 250px;
+        height: 30px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border : 0;
+        margin-right: -30px;
+        color:black;
+        text-align: center;
+        
+    }
+    input:focus{
+        outline: none !important;
+    }
+    .searchBtn{
+        height: 30px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: -10px;
+        border : 0;
+        margin-left: 0px;
+        color: black;
+        background-color: transparent;
+    }
+    .fa {
+        margin-top:10px; 
+        margin-left:0px;
+        margin-right: 0px;
+        padding-left:0px;
+        padding-right: 0px;
+        font-size: 15px;
+        width: 35px;
+        text-align: center;
+        text-decoration: none;
+        color:white;
+    }
+    .fa:hover, .fa:focus{
+        color : lightblue;
+        text-decoration : none!important;
+    }
+    .guide{
+        text-align: center;
+        background-color: whitesmoke;
+    }
+    .guide h1 {
+        background: -webkit-linear-gradient(-90deg, #1B4F72, #2980B9);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .leftDiv{
+        margin-right :0px;
+        border-right: 2px solid black;
+        height: 185px;
+    }
+    .leftDiv1{
+        margin-right :0px;
+        border-right: 2px solid black;
+        height: 350px;
+    }
+    .rightDiv{
+        margin-left:-16px;
+    }
+    .leftImgDiv{
+        border-right: 2px solid black;
+        height: 180px;
+    }
+    .leftImg1Div{
+        border-right: 2px solid black;
+        height: 350px;
+    }
+    .leftLastDiv{
+        text-align: left;
+        margin-top: 35px;
+    }
+    .leftLastDiv a{
+        color: white;
+        float:left;
+    }
+    .leftLastDiv a:hover{
+        color: lightblue;
+        text-decoration: none!important;
+    }
+    .leftLastDiv div a:hover{
+        color: lightblue;
+        text-decoration: none!important;
+    }
+    .rightLastDiv{
+        float:left;
+        margin-top: 35px;
+    }
+    @media(max-width:992px){
+        .hiddenMap{
+            display: none !important;
+        }
+    }
+    .search-form ::-webkit-input-placeholder {
+        text-align: left;
+    }
+    form {
+        display: inline-block;
+    }
+    .form-group input {
+        width : 350px;
+        margin-left: -3px;
+        text-align: center;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius:0px;
+    }
+    .form-group .green {
+        width : 350px;
+        margin-left: -3px;
+        text-align: center;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius:0px;
+    }
+    .form-group button{
+        width:100px;
+        background-color:#1B4F72;
+        color:white;
+        border-color: #2980B9;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius:0px;
+        box-shadow: 0 0 5px #145A32;
+    }
+    .form-group .greenBtn{
+        width:100px;
+        background-color:#229954;
+        color:white;
+        border-color: #145A32;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius:0px;
+        box-shadow: 0 0 5px #145A32;
+    }
+
+    .form-group ::-webkit-input-placeholder {
+        text-align: center;
+        color: #1B4F72;
+    }
+    
+    .form-green ::-webkit-input-placeholder {
+        text-align: center;
+        color: #145A32;
+    }
+    
+    .form-group button:hover{
+        background-color:#1B4F72;
+        box-shadow: 0 0 5px #2980B9;
+        color:lightblue;
+        border-color: #2980B9;
+    }
+    .form-group .greenBtn:hover{
+        background-color:#239B56;
+        box-shadow: 0 0 5px #145A32;
+        color:lightblue;
+        border-color: #145A32;
+    }
+    
+    .middleDivLogin {
+        background-image: -webkit-linear-gradient(-90deg, #5DADE2, #148F77);
+        text-align: center;
+        height: 550px;
+    }
+    
+    .middleDivGreen{
+        background-image: url(images/tree2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        height: 1000px;
+    }
+    
+    .form-group textarea{
+        width : 350px;
+        height : 100px;
+        margin-left: -3px;
+        text-align: center;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius:0px;
+    }    
+    .middleDivSignUp {
+        background-image: -webkit-linear-gradient(-90deg, #5DADE2, #148F77);
+        text-align: center;
+        min-height: 900px;
+    }
+    @media(min-width:1200px){
+        .dashboardDiv{
+            background-image: linear-gradient(-90deg, #1B4F72, #2980B9);
+            width : 250px;
+            height : 250px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            text-align: center;
+            display: inline-block;
+            margin-left: 20px;;    
+            box-shadow: 0 0 5px #2980B9;
+            padding-top:10px;
+        }
+        .divImages{
+            width: 200px;
+            height: 200px;
+        }
+        .middleDivDashboard {
+            background-image: -webkit-linear-gradient(-90deg, #5DADE2, #148F77);
+            text-align: center;
+            height: 500px;
+        }
+        .dashboardSpan{
+            color: white;
+            font-size: 20px;
+        }
+    }
+    
+    @media(min-width:993px) and (max-width:1200px) {
+        .dashboardDiv{
+            background-image: linear-gradient(-90deg, #1B4F72, #2980B9);
+            width : 200px;
+            height : 200px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            text-align: center;
+            display: inline-block;
+            margin-left: 20px;;    
+            box-shadow: 0 0 5px #2980B9;
+            padding-top:10px;
+        }
+        .divImages{
+            width: 150px;
+            height: 150px;
+        }
+        .middleDivDashboard {
+            background-image: -webkit-linear-gradient(-90deg, #5DADE2, #148F77);
+            text-align: center;
+            height: 400px;
+        }
+        .dashboardSpan{
+            color: white;
+            font-size: 20px;
+        }
+    }
+    
+    @media(min-width:767px) and (max-width:993px) {
+        .dashboardDiv{
+            background-image: linear-gradient(-90deg, #1B4F72, #2980B9);
+            width : 150px;
+            height : 150px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            text-align: center;
+            display: inline-block;
+            margin-left: 20px;;    
+            box-shadow: 0 0 5px #2980B9;
+            padding-top:10px;
+        }
+        .divImages{
+            width: 110px;
+            height: 110px;
+        }
+        .middleDivDashboard {
+            background-image: -webkit-linear-gradient(-90deg, #5DADE2, #148F77);
+            text-align: center;
+            height: 350px;
+        }
+        .dashboardSpan{
+            color: white;
+            font-size: 15px;
+        }
+    }
+    
+    @media(max-width:767px) {
+        .dashboardDiv{
+            background-image: linear-gradient(-90deg, #1B4F72, #2980B9);
+            width : 150px;
+            height : 150px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            text-align: center;
+            display: inline-block;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 5px #2980B9;
+            padding-top:10px;
+        }
+        .divImages{
+            width: 110px;
+            height: 110px;
+        }
+        .middleDivDashboard {
+            background-image: -webkit-linear-gradient(-90deg, #5DADE2, #148F77);
+            text-align: center;
+            height: 500px;
+        }
+        .dashboardSpan{
+            color: white;
+            font-size: 15px;
+        }
+    }
+    
+    .dashboardDiv a:hover{
+        text-decoration: none !important;
+    }
+    @media(min-width:1200px) {
+            .donations div {
+                height: 340px;
+                width: 250px;
+                background-color: white;
+                border-radius: 5px;
+                text-align: center;
+                box-shadow: 0 0 10px lightgrey;
+                color: black;
+                margin-top: 20px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .delete{
+                border-top-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 0px;
+                border-bottom-right-radius:0px;
+                width:100px; 
+                border:0px; 
+                margin-top:7px; 
+                background-color: #80BEBD;
+                height: 35px;
+            }
+            .links{
+                text-align:center;
+            }
+            .images {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .fonts{
+                font-size: 20px;
+                color:black;
+            }
+            
+            .fontsm{
+                font-size: 15px;
+                color:black;
+            }
+        }
+
+        @media(min-width:993px) and (max-width:1200px) {
+            .donations div {
+                height: 265px;
+                width: 198px;
+                background-color: white;
+                border-radius: 5px;
+                text-align: center;
+                box-shadow: 0 0 10px lightgrey;
+                color: black;
+                margin-top: 20px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .delete{
+                border-top-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 0px;
+                border-bottom-right-radius:0px;
+                width:80px; 
+                border:0px; 
+                margin-top: 10px; 
+                background-color: #80BEBD;
+                font-size:14px;
+                height: 30px;
+            }
+            .images {
+                width: 130px;
+                height: 130px;
+            }
+            .fonts{
+                font-size: 18px;
+                color:black;
+            }
+            
+            .fontsm{
+                font-size: 13px;
+                color:black;
+            }
+        }
+
+        @media(min-width:767px) and (max-width:992px) {
+            .donations div {
+                height: 270px;
+                width: 185px;
+                background-color: white;
+                border-radius: 5px;
+                text-align: center;
+                box-shadow: 0 0 10px lightgrey;
+                color: black;
+                margin-top: 20px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .delete{
+                border-top-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 0px;
+                border-bottom-right-radius:0px;
+                width:80px; 
+                border:0px; 
+                margin-top: 10px; 
+                background-color: #80BEBD;
+                font-size:14px;
+                height: 30px;
+            }
+            .links{
+                text-align:center;
+                margin-left: -20px;
+            }
+            
+            .images {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .fonts{
+                font-size: 16px;
+                color:black;
+            }
+            
+            .fontsm{
+                font-size: 12px;
+                color:black;
+            }
+        }
+
+        @media(max-width:767px) {
+            .donations div {
+                height: 190px;
+                width: 127px;
+                background-color: white;
+                border-radius: 5px;
+                text-align: center;
+                box-shadow: 0 0 10px lightgrey;
+                color: black;
+                margin-top: 20px;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            .delete{
+                border-top-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 0px;
+                border-bottom-right-radius:0px;
+                width:60px; 
+                border:0px; 
+                margin-top: 3px; 
+                background-color: #80BEBD;
+                font-size:10px;
+                height: 20px;
+            }
+            .images {
+                width: 75px;
+                height: 75px;
+            }
+            .links{
+                text-align:center;
+                margin-bottom: 15px;
+            }
+            
+            .fonts{
+                font-size: 10px;
+                color:black;
+            }
+            
+            .fontsm{
+                margin-top:-20px;
+                font-size: 7px;
+                color:black;
+            }
+        }
+        @media(max-width:767px) {
+            #link3-book{
+                display:inline-block;
+                width:14.77%;
+                color:#A777C0;
+                margin-top: -20px;
+                text-align: center;
+            }
+            #link4-book{
+                display:inline-block;
+                width:14.77%;
+                text-align: center;
+            }
+            #heading-book{
+                font-size:20px; 
+                color:#A777C0;
+            }
+        }
+        @media(min-width:767px) {
+            #link3-book{
+                display:inline-block;
+                width:16.53%;
+                background-color:#F0D3FF; 
+                color:#A777C0;
+                text-align: center;
+            }
+            #link4-book{
+                display:inline-block;
+                width:16.53%;
+                text-align: center;
+            }
+            #heading-book{
+                font-size:50px; 
+                color:#A777C0;
+            }
+        }
+        @media(max-width:767px) {
+            #link3-electronic{
+                display:inline-block;
+                width:14.77%;
+                color:#3CBFFE;
+                margin-left: 14.5px;
+                margin-top: -20px;
+                text-align: center;
+            }
+            #link4-electronic{
+                display:inline-block;
+                width:14.77%;
+                text-align: center;
+            }
+            #heading-electronic{
+                font-size:20px; 
+                color:#3CBFFE;
+            }
+        }
+        @media(min-width:767px) {
+            #link3-electronic{
+                display:inline-block;
+                width:16.53%;
+                margin-left:-14.5px;
+                background-color:#D7F1FF; 
+                color:#3CBFFE;
+                text-align: center;
+            }
+            #link4-electronic{
+                display:inline-block;
+                width:16.53%;
+                text-align: center;
+            }
+            #heading-electronic{
+                font-size:50px;
+                color:#3CBFFE;
+            }
+        }
+        @media(max-width:767px) {
+            #link3-cloth{
+                display:inline-block;
+                width:14.77%;
+                color:#80BEBD;
+                margin-left: 14.5px;
+                margin-top: -20px;
+                text-align: center;
+            }
+            #link4-cloth{
+                display:inline-block;
+                width:14.77%;
+                text-align: center;
+            }
+            #heading-cloth{
+                font-size:20px; 
+                color:#80BEBD;
+            }
+        }
+        @media(min-width:767px) {
+            #link3-cloth{
+                display:inline-block;
+                width:16.53%;
+                margin-left:-14.5px;
+                background-color:#E8F6F6; 
+                color:#80BEBD;
+                text-align: center;
+            }
+            #link4-cloth{
+                display:inline-block;
+                width:16.53%;
+                text-align: center;
+            }
+            #heading-cloth{
+                font-size:50px; 
+                color:#80BEBD;
+            }
+        }
+        
+         @media(max-width:767px) {
+            #link3-medicine{
+                display:inline-block;
+                width:14.77%;
+                color:#FF6060;
+                margin-left: 14.5px;
+                margin-top: -20px;
+                text-align: center;
+            }
+            #link4-medicine{
+                display:inline-block;
+                width:14.77%;
+                text-align: center;
+            }
+            #heading-medicine{
+                font-size:20px; 
+                color:#FF6060;
+            }
+        }
+        @media(min-width:767px) {
+            #link3-medicine{
+                display:inline-block;
+                width:16.53%;
+                margin-left:-14.5px;
+                background-color:#FFBFBF; 
+                color:#FF6060;
+                text-align: center;
+            }
+            #link4-medicine{
+                display:inline-block;
+                width:16.53%;
+                text-align: center;
+            }
+            #heading-medicine{
+            font-size:50px; 
+            color:#FF6060;
+        }
+        }
+        @media(max-width:767px) {
+            #link3-furniture{
+                display:inline-block;
+                width:14.77%;
+                color:#39D96D;
+                margin-left: 14.5px;
+                margin-top: -20px;
+                text-align: center;
+            }
+            #link4-furniture{
+                display:inline-block;
+                width:14.77%;
+                text-align: center;
+            }
+            #heading-furniture{
+                font-size:20px; 
+                color:#39D96D;
+            }
+        }
+        @media(min-width:767px) {
+            #link3-furniture{
+                display:inline-block;
+                width:16.53%;
+                margin-left:-14.5px;
+                background-color:#BBF4CE; 
+                color:#39D96D;
+                text-align: center;
+            }
+            #link4-furniture{
+                display:inline-block;
+                width:16.53%;
+                text-align: center;
+            }
+            #heading-furniture{
+            font-size:50px; 
+            color:#39D96D;
+        }
+        }
+        @media(max-width:767px) {
+            #link3-sport{
+                display:inline-block;
+                width:14.77%;
+                color:#FF8341;
+                margin-left: 14.5px;
+                margin-top: -20px;
+                text-align: center;
+            }
+            #link4-sport{
+                display:inline-block;
+                width:14.77%;
+                text-align: center;
+            }
+            #heading-sport{
+                font-size:20px; 
+                color:#FF8341;
+            }
+        }
+        @media(min-width:767px) {
+            #link3-sport{
+                display:inline-block;
+                width:16.53%;
+                margin-left:-14.5px;
+                background-color:#FFE3D4; 
+                color:#FF8341;
+                text-align: center;
+            }
+            #link4-sport{
+                display:inline-block;
+                width:16.53%;
+                text-align: center;
+            }
+            #heading-sport{
+                font-size:50px; 
+                color:#FF8341;
+            }
+        }
+        .middleNavbar{
+            border-radius: 0px;
+            background-color : white;
+            border:0px;
+        }
+        .icon{
+            width:12px;
+            height:12px;
+        }
+        #link, #link1-cloth, #link1-book, #link1-electronic, #link1-medicine, #link1-furniture, #link1-sport, #linkg{
+            color:black;
+        }
+        
+        #link1-cloth:hover{
+            color:#80BEBD;
+        }
+        
+        #link1-book:hover{
+            color:#A777C0;
+        }
+        
+        #link1-electronic:hover{
+            color:#3CBFFE;
+        }
+        #link1-medicine:hover{
+            color:#FF6060;
+        }
+        #link1-furniture:hover{
+            color:#39D96D;
+        }
+        #link1-sport:hover{
+            color:#FF8341;
+        }
+        .form-group .cloth{
+            border-color: #80BEBD;
+            color: #80BEBD;
+            text-align: center;
+            width: 300px;
+        }
+        
+        .form-group .book{
+            border-color: #A777C0;
+            color: #A777C0;
+            text-align: center;
+            width: 300px;
+        }
+        .form-group .electronic{
+            border-color: #3CBFFE;
+            color: #3CBFFE;
+            text-align: center;
+            width: 300px;
+        }
+        .form-group .medicine{
+            border-color: #FF6060;
+            color: #FF6060;
+            text-align: center;
+            width: 300px;
+        }
+        .form-group .furniture{
+            border-color: #39D96D;
+            color: #39D96D;
+            text-align: center;
+            width: 300px;
+        }
+        .form-group .sport{
+            border-color: #FF8341;
+            color: #FF8341;
+            text-align: center;
+            width: 300px;
+        }
+        .form-cloth ::-webkit-input-placeholder {
+            text-align: center;
+            color: #80BEBD;
+        }
+        .form-book ::-webkit-input-placeholder {
+            text-align: center;
+            color: #A777C0;
+        }
+        .form-electronic ::-webkit-input-placeholder {
+            text-align: center;
+            color: #3CBFFE;
+        }
+        .form-medicine ::-webkit-input-placeholder {
+            text-align: center;
+            color: #FF6060;
+        }
+        .form-furniture ::-webkit-input-placeholder {
+            text-align: center;
+            color: #39D96D;
+        }
+        .form-sport ::-webkit-input-placeholder {
+            text-align: center;
+            color: #FF8341;
+        }
+        .chatbot {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #1B4F72;
+            bottom: 0%;
+            right: 3%;
+            position: fixed;
+            border-bottom-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background-image: linear-gradient(90deg, whitesmoke, lightblue);
+            display: none;
+        }
+
+        .chatlogs {
+            padding: 5px;
+            width: 250px;
+            height: 258px;
+        }
+
+        .chat {
+            width: 115%;
+            display: flex;
+            resize: none;
+            flex-flow: row wrap;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .chat-message {
+            width: 100%;
+            padding: 15px;
+            resize: none;
+            margin-top: 20px;
+            margin-left: 13px;
+            background-color: cornflowerblue;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            color: black;
+            font-size: 15px;
+            min-height: 50px;
+            white-space: normal;
+        }
+
+        .bot .chat-message {
+            background-color: dodgerblue;
+            order: -1;
+            width: 100%;
+            overflow: hidden;
+            white-space: normal;
+        }
+
+        .chatbutton {
+            width: 300px;
+            height: 40px;
+            bottom: 0%;
+            right: 3%;
+            position: fixed;
+            border: 1px solid #1B4F72;
+            background-image: linear-gradient(90deg, whitesmoke, #2980B9);
+            border-bottom-left-radius: 10px;
+            border-top-right-radius: 10px;
+            color: black;
+        }
+
+        #input {
+            width: 298px;
+            height: 40px;
+            padding: 15px;
+            background: lavender;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-color: darkgray;
+            color: black;
+            font-size: 15px;
+            resize: none;
+            border: 1px solid #91CAF6;
+        }
+
+        #close {
+            right: 5;
+            top: 6;
+            float: right;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border: 0;
+            background-color: #1B4F72;
+            color: white;
+            width: 25px;
+        }
+
+        #chatbot {
+            float: right;
+        }
+</style>
+
+
+<body class="backgrnd" ng-app="app" ng-controller="dashboardCtrl" ng-init="initial()">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top topNavBar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle togBar" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" id="topNavColor"><span class="glyphicon glyphicon-gift"></span>&nbsp;giftAid</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav topNavColor">
+                    <li><a href="" id="topNavColor" ng-click="homeUrl()"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;home</a></li>
+                    <li><a href="" id="topNavColor" ng-click="aboutUrl()"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;aboutUs</a></li>
+                    <li><a href="" id="topNavColor" ng-click="greenUrl()"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;goGreen</a></li>
+                    <li><a href="" id="topNavColor" ng-click="contactUrl()"><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;contactUs</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="" id="topNavColor" ng-click="signVariable()"><span class="glyphicon glyphicon-user"></span>&nbsp; {{signvar}}</a></li>
+                    <li><a href="" id="topNavColor" ng-click="logout()"><span class="glyphicon glyphicon-log-in"></span>&nbsp; {{logvar}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div ng-view>
+    </div>
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-route.js"></script>
+    <script src="angular/angular-cookies.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("app", ['ngRoute', 'ngCookies']);
+
+        app.config(function($routeProvider) {
+            $routeProvider
+                .when('/home', {
+                    templateUrl: 'home3.html'
+                })
+                .when('/about', {
+                    templateUrl: 'about2.html'
+                })
+                .when('/contactus', {
+                    templateUrl: 'contactus2.html'
+                })
+                .when('/gogreen', {
+                    templateUrl: 'go_green2.html'
+                })
+                .when('/dashboard', {
+                    templateUrl: 'dashboard1.html'
+                })
+                .when('/profile', {
+                    templateUrl: 'editprofile1.html'
+                })
+                .when('/searchnearby', {
+                    templateUrl: 'searchnearby.html'
+                })
+                .when('/cloth_donations', {
+                    templateUrl: 'clothes_donation1.html'
+                })
+                .when('/cloth_pending', {
+                    templateUrl: 'clothes_pending1.html'
+                })
+                .when('/cloth_previous', {
+                    templateUrl: 'clothes_previous1.html'
+                })
+                .when('/book_donations', {
+                    templateUrl: 'books_donation2.html'
+                })
+                .when('/book_pending', {
+                    templateUrl: 'books_pending5.html'
+                })
+                .when('/book_previous', {
+                    templateUrl: 'books_previous.html'
+                })
+                .when('/electronic_donations', {
+                    templateUrl: 'electronics_donation1.html'
+                })
+                .when('/electronic_pending', {
+                    templateUrl: 'electronics_pending.html'
+                })
+                .when('/electronic_previous', {
+                    templateUrl: 'electronics_previous.html'
+                })
+                .when('/medicine_donations', {
+                    templateUrl: 'medicines_donation1.html'
+                })
+                .when('/medicine_pending', {
+                    templateUrl: 'medicines_pending1.html'
+                })
+                .when('/medicine_previous', {
+                    templateUrl: 'medicines_previous1.html'
+                })
+                .when('/furniture_donations', {
+                    templateUrl: 'furnitures_donation.html'
+                })
+                .when('/furniture_pending', {
+                    templateUrl: 'furnitures_pending.html'
+                })
+                .when('/furniture_previous', {
+                    templateUrl: 'furnitures_previous.html'
+                })
+                .when('/sport_donations', {
+                    templateUrl: 'sports_donation.html'
+                })
+                .when('/sport_pending', {
+                    templateUrl: 'sports_pending.html'
+                })
+                .when('/sport_previous', {
+                    templateUrl: 'sports_previous.html'
+                })
+                .when('/login', {
+                    templateUrl: 'login_tpl.html'
+                })
+                .when('/signup', {
+                    templateUrl: 'signup1.html'
+                })
+                .otherwise({
+                    redirectTo: '/home'
+                });
+        });
+
+        app.run(function($rootScope, $location, loginService) {
+            var routespermission = ['/dashboard'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission1 = ['/profile'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission1.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission2 = ['/login'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission2.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (resp.data)
+                            $location.path('/dashboard');
+                    });
+                }
+            });
+            var routespermission3 = ['/signup'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission3.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (resp.data)
+                            $location.path('/dashboard');
+                    });
+                }
+            });
+            var routespermission4 = ['/cloth_donations'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission4.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission5 = ['/cloth_pending'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission5.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission6 = ['/cloth_previous'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission6.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission7 = ['/book_donations'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission7.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission8 = ['/book_pending'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission8.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission9 = ['/book_previous'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission9.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission10 = ['/electronic_donations'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission10.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission11 = ['/electronic_pending'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission11.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission12 = ['/electronic_previous'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission12.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission14 = ['/medicine_donations'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission14.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission15 = ['/medicine_pending'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission15.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission16 = ['/medicine_previous'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission16.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission17 = ['/furniture_donations'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission17.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission18 = ['/furniture_pending'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission18.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission19 = ['/furniture_previous'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission19.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission20 = ['/sport_donations'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission20.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission21 = ['/sport_pending'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission21.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+            var routespermission22 = ['/sport_previous'];
+            $rootScope.$on('$routeChangeStart', function() {
+                if (routespermission22.indexOf($location.path()) != -1) {
+                    var connected = loginService.islogged();
+                    connected.then(function(resp) {
+                        if (!resp.data)
+                            $location.path('/login');
+                    });
+                }
+            });
+        });
+
+        app.directive('loginDirective', function() {
+            return {
+                templateUrl: 'login2.html'
+            }
+        })
+
+        app.factory('loginService', ['$http', '$location', 'sessionService', '$cookies', function($http, $location, sessionService, $cookies) {
+            return {
+                login: function(email, pwd, scope) {
+                    if (email == "")
+                        scope.erremail = "Enter your email.";
+                    else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+                        scope.erremail = "Invalid Email.";
+                    else
+                        scope.erremail = "";
+
+                    if (pwd == "")
+                        scope.errpwd = "Enter your password.";
+                    else if (pwd.length < 8)
+                        scope.errpwd = "Invalid password.";
+                    else if (!/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/.test(pwd))
+                        scope.errpwd = "Invalid password.";
+                    else
+                        scope.errpwd = "";
+
+                    if (email != "" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) && pwd != "" && pwd.length >= 8 && /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/.test(pwd)) {
+                        $http({
+                            url: "http://localhost/rest_giftaid/api/donators/login.php",
+                            method: 'POST',
+                            data: {
+                                'email': email,
+                                'pwd': pwd
+                            },
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }).then(function(resp) {
+                            if (resp.data.message == "Donator Exists") {
+                                scope.message = "";
+                                sessionService.set('user', resp.data.uid);
+                                $cookies.put('id', resp.data.id);
+                                $location.path('/dashboard');
+                            } else {
+                                scope.message = resp.data.message;
+                                $location.path('/login');
+                            }
+
+                        }, function(resp) {
+                            console.log(resp);
+                        });
+                    }
+                },
+                logout: function() {
+                    sessionService.destroy('user');
+                    $cookies.remove('id');
+                    $location.path('/login');
+                },
+                islogged: function() {
+                    var $checkSessionServer = $http.post('http://localhost/rest_giftaid/api/donators/loggedin.php');
+                    return $checkSessionServer;
+                    /*if (sessionService.get('user')) return true;
+                    else return false;*/
+                }
+            }
+        }]);
+
+        app.factory('sessionService', ['$http', function($http) {
+            return {
+                set: function(key, value) {
+                    return sessionStorage.setItem(key, value);
+                },
+                get: function(key) {
+                    return sessionStorage.getItem(key);
+                },
+                destroy: function(key) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/donators/logout.php",
+                        method: 'POST'
+                    })
+                    return sessionStorage.removeItem(key);
+                }
+            }
+        }]);
+
+        app.controller('loginCtrl', ['$scope', 'loginService', '$rootScope', '$location', function($scope, loginService, $rootScope, $location) {
+            $scope.message = "";
+            $scope.erremail = "";
+            $scope.errpwd = "";
+            $scope.login = function(email, pwd) {
+                loginService.login(email, pwd, $scope);
+            }
+            $scope.new_user = function() {
+                $location.path('/signup');
+            }
+        }]);
+
+        app.controller('contactUsCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+            $scope.message = "";
+            $scope.email = "";
+            $scope.name = "";
+            $scope.errmessage = "";
+            $scope.erremail = "";
+            $scope.errname = "";
+            $scope.msg = "";
+
+            $scope.contact_us = function() {
+                if ($scope.email == "")
+                    $scope.erremail = "Enter your email.";
+                else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.email))
+                    $scope.erremail = "Invalid Email.";
+                else
+                    $scope.erremail = "";
+
+                if ($scope.name == "")
+                    $scope.errname = "Name must be filled out.";
+                else if (!/^[a-zA-Z\s]*$/.test($scope.name))
+                    $scope.errname = "Name should only contain letters.";
+                else
+                    $scope.errname = "";
+
+                if ($scope.message == "")
+                    $scope.errmessage = "Message should be filled out."
+                else
+                    $scope.errmessage = "";
+
+                if ($scope.name != "" && /^[a-zA-Z\s]*$/.test($scope.name) && $scope.email != "" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.email) && $scope.message != "") {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/contact_us/create.php",
+                        method: 'POST',
+                        data: {
+                            'name': $scope.name,
+                            'email': $scope.email,
+                            'message': $scope.message
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        $scope.msg = resp.data.message;
+                        $location.path('/contactus');
+                        $scope.name = "";
+                        $scope.email = "";
+                        $scope.message = "";
+                    }, function(resp) {});
+                }
+            }
+        }]);
+
+        app.controller('goGreenCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+            $scope.tree = "";
+            $scope.email = "";
+            $scope.name = "";
+            $scope.errtree = "";
+            $scope.erremail = "";
+            $scope.errname = "";
+            $scope.msg = "";
+
+            $scope.goGreen = function() {
+                if ($scope.email == "")
+                    $scope.erremail = "Enter your email.";
+                else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.email))
+                    $scope.erremail = "Invalid Email.";
+                else
+                    $scope.erremail = "";
+
+                if ($scope.name == "")
+                    $scope.errname = "Name must be filled out.";
+                else if (!/^[a-zA-Z\s]*$/.test($scope.name))
+                    $scope.errname = "Name should only contain letters.";
+                else
+                    $scope.errname = "";
+
+                if ($scope.tree == "")
+                    $scope.errtree = "Tree Species should be filled out."
+                else
+                    $scope.errtree = "";
+
+                if ($scope.name != "" && /^[a-zA-Z\s]*$/.test($scope.name) && $scope.email != "" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.email) && $scope.tree != "") {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/go_green/create.php",
+                        method: 'POST',
+                        data: {
+                            'name': $scope.name,
+                            'email': $scope.email,
+                            'tree_type': $scope.tree
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        $scope.msg = resp.data.message;
+                        $location.path('/gogreen');
+                        $scope.name = "";
+                        $scope.email = "";
+                        $scope.tree_type = "";
+                    }, function(resp) {
+                        console.log(resp);
+                    });
+                }
+            }
+        }]);
+
+        app.controller('dashboardCtrl', ['$scope', 'loginService', '$cookies', '$http', '$location', '$rootScope', function($scope, loginService, $cookies, $http, $location, $rootScope) {
+            $scope.donationlink = "http://localhost/Giftaid/index.html?#!/";
+            $scope.id = "";
+            $scope.did = "";
+            $scope.name = "";
+            $scope.age = "";
+            $scope.address = "";
+            $scope.city = "";
+            $scope.state = "";
+            $scope.pincode = "";
+            $scope.phone = "";
+            $scope.email = "";
+            $scope.pwd = "";
+            $scope.cid = "";
+            $scope.clothName = "";
+            $scope.clothQuan = "";
+            $scope.clothStatus = "";
+            $scope.clothDate = "";
+            $scope.clothPending = [];
+            $scope.clothPrevious = [];
+            $scope.bid = "";
+            $scope.bookName = "";
+            $scope.bookQuan = "";
+            $scope.bookStatus = "";
+            $scope.bookDate = "";
+            $scope.bookPending = [];
+            $scope.bookPrevious = [];
+            $scope.eid = "";
+            $scope.electronicName = "";
+            $scope.electronicQuan = "";
+            $scope.electronicStatus = "";
+            $scope.electronicDate = "";
+            $scope.electronicPending = [];
+            $scope.electronicPrevious = [];
+            $scope.mid = "";
+            $scope.medicineName = "";
+            $scope.medicineQuan = "";
+            $scope.medicineStatus = "";
+            $scope.medicineDate = "";
+            $scope.medicineExpDate = "";
+            $scope.medicinePending = [];
+            $scope.medicinePrevious = [];
+            $scope.fid = "";
+            $scope.furnitureName = "";
+            $scope.furnitureQuan = "";
+            $scope.furnitureStatus = "";
+            $scope.furnitureDate = "";
+            $scope.furniturePending = [];
+            $scope.furniturePrevious = [];
+            $scope.sid = "";
+            $scope.sportName = "";
+            $scope.sportQuan = "";
+            $scope.sportStatus = "";
+            $scope.sportDate = "";
+            $scope.sportPending = [];
+            $scope.sportPrevious = [];
+            $scope.errage = "";
+            $scope.erraddress = "";
+            $scope.errcity = "";
+            $scope.errstate = "";
+            $scope.errpincode = "";
+            $scope.errphone = "";
+            $scope.errclothName = "";
+            $scope.errclothQuan = "";
+            $scope.errbookName = "";
+            $scope.errbookQuan = "";
+            $scope.errelectronicName = "";
+            $scope.errelectronicQuan = "";
+            $scope.errmedicineName = "";
+            $scope.errmedicineQuan = "";
+            $scope.errmedicineExpDate = "";
+            $scope.errfurnitureName = "";
+            $scope.errfurnitureQuan = "";
+            $scope.errsportName = "";
+            $scope.errsportQuan = "";
+            $scope.message1 = "";
+            $scope.message2 = "";
+            $scope.initial = function() {
+                var routespermission = ['/login'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routespermission.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logIn";
+                        $scope.signvar = "signUp";
+                    }
+                });
+                var routesperm1 = ['/dashboard'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm1.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm2 = ['/profile'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm2.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm3 = ['/cloth_donations'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm3.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm4 = ['/cloth_pending'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm4.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm5 = ['/cloth_previous'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm5.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm6 = ['/book_donations'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm6.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm7 = ['/book_pending'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm7.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm8 = ['/book_previous'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm8.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm8 = ['/electronic_donations'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm8.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm9 = ['/electronic_pending'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm9.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm10 = ['/electronic_previous'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm10.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm11 = ['/medicine_donations'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm11.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm12 = ['/medicine_pending'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm12.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm13 = ['/medicine_previous'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm13.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm14 = ['/furniture_donations'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm14.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm15 = ['/furniture_pending'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm15.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm16 = ['/furniture_previous'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm16.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm17 = ['/sport_donations'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm17.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm18 = ['/sport_pending'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm18.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm19 = ['/sport_previous'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm19.indexOf($location.path()) != -1) {
+                        $scope.logvar = "logOut";
+                        $scope.signvar = "profile";
+                    }
+                });
+                var routesperm20 = ['/home'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm20.indexOf($location.path()) != -1) {
+                        var connected = loginService.islogged();
+                        connected.then(function(resp) {
+                            if (!resp.data) {
+                                $scope.logvar = "logIn";
+                                $scope.signvar = "signUp";
+                            } else {
+                                $scope.logvar = "logOut";
+                                $scope.signvar = "profile";
+                            }
+                        });
+
+                    }
+                });
+                var routesperm21 = ['/signup'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm21.indexOf($location.path()) != -1) {
+                        var connected = loginService.islogged();
+                        connected.then(function(resp) {
+                            if (!resp.data) {
+                                $scope.logvar = "logIn";
+                                $scope.signvar = "signUp";
+                            } else {
+                                $scope.logvar = "logOut";
+                                $scope.signvar = "profile";
+                            }
+                        });
+
+                    }
+                });
+                var routesperm22 = ['/about'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm22.indexOf($location.path()) != -1) {
+                        var connected = loginService.islogged();
+                        connected.then(function(resp) {
+                            if (!resp.data) {
+                                $scope.logvar = "logIn";
+                                $scope.signvar = "signUp";
+                            } else {
+                                $scope.logvar = "logOut";
+                                $scope.signvar = "profile";
+                            }
+                        });
+
+                    }
+                });
+                var routesperm24 = ['/contactus'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm24.indexOf($location.path()) != -1) {
+                        var connected = loginService.islogged();
+                        connected.then(function(resp) {
+                            if (!resp.data) {
+                                $scope.logvar = "logIn";
+                                $scope.signvar = "signUp";
+                            } else {
+                                $scope.logvar = "logOut";
+                                $scope.signvar = "profile";
+                            }
+                        });
+
+                    }
+                });
+                var routesperm25 = ['/gogreen'];
+                $rootScope.$on('$routeChangeStart', function() {
+                    if (routesperm25.indexOf($location.path()) != -1) {
+                        var connected = loginService.islogged();
+                        connected.then(function(resp) {
+                            if (!resp.data) {
+                                $scope.logvar = "logIn";
+                                $scope.signvar = "signUp";
+                            } else {
+                                $scope.logvar = "logOut";
+                                $scope.signvar = "profile";
+                            }
+                        });
+                    }
+                });
+            }
+            $scope.logout = function() {
+                loginService.logout();
+                $scope.logvar = "logIn";
+                $scope.signvar = "signUp";
+            }
+            $scope.edit_profile = function() {
+                $location.path('/profile');
+            }
+            $scope.userData = function() {
+                var id = $cookies.get('id');
+                if (id) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/donators/profile.php",
+                        method: 'POST',
+                        data: {
+                            'id': id
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        if (resp.data.message == "Authorised") {
+                            $scope.id = resp.data.id;
+                            $scope.name = resp.data.name;
+                            $scope.email = resp.data.email;
+                        } else {
+                            $scope.message = resp.data.message;
+                            $location.path('/login');
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                }
+            }
+            $scope.fetchData = function() {
+                var id = $cookies.get('id');
+                if (id) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/donators/fetchdata.php",
+                        method: 'POST',
+                        data: {
+                            'id': id
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        if (resp.data.message == "Authorised") {
+                            $scope.id = resp.data.id;
+                            $scope.name = resp.data.name;
+                            $scope.age = resp.data.age;
+                            $scope.address = resp.data.address;
+                            $scope.city = resp.data.city;
+                            $scope.state = resp.data.state;
+                            $scope.pincode = resp.data.pincode;
+                            $scope.phone = resp.data.phone;
+                            $scope.email = resp.data.email;
+                        } else {
+                            $scope.message = resp.data.message;
+                            $location.path('/login');
+                        }
+
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                }
+            }
+
+            $scope.update = function() {
+                if ($scope.age == "")
+                    $scope.errage = "Age must be filled out.";
+                else if ($scope.age < 18)
+                    $scope.errage = "You are a minor.";
+                else
+                    $scope.errage = "";
+
+                if ($scope.address == "")
+                    $scope.erraddress = "Address must be filled out.";
+                else
+                    $scope.erraddress = "";
+
+                if ($scope.city == "")
+                    $scope.errcity = "City must be filled out.";
+                else
+                    $scope.errcity = "";
+
+                if ($scope.state == "")
+                    $scope.errstate = "State must be filled out.";
+                else
+                    $scope.errstate = "";
+
+                if ($scope.pincode == "")
+                    $scope.errpincode = "Pincode must be filled out.";
+                else if ($scope.pincode.toString().length != 6)
+                    $scope.errpincode = "Pincode must contain 6 numbers.";
+                else
+                    $scope.errpincode = "";
+
+                if ($scope.phone == "")
+                    $scope.errphone = "Contact Number must be filled out"
+                else if ($scope.phone.toString().length != 10)
+                    $scope.errphone = "Contact Number must contain 10 numbers.";
+                else
+                    $scope.errphone = "";
+
+                if ($scope.age != "" && $scope.age >= 18 && $scope.address != "" && $scope.city != "" && $scope.state != "" && $scope.pincode != "" && $scope.pincode.toString().length == 6 && $scope.phone != "" && $scope.phone.toString().length == 10) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/donators/editprofile.php",
+                        method: 'POST',
+                        data: {
+                            'id': $scope.id,
+                            'age': $scope.age,
+                            'address': $scope.address,
+                            'city': $scope.city,
+                            'state': $scope.state,
+                            'pincode': $scope.pincode,
+                            'phone': $scope.phone,
+                            'email': $scope.email,
+                            'pwd': $scope.pwd
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        if (resp.data.message == "Updated") {
+                            $scope.message1 = resp.data.message;
+                            $scope.message2 = "";
+                            window.location.reload('\profile');
+                        } else {
+                            $scope.message2 = resp.data.message;
+                            $scope.message1 = "";
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    });
+                }
+            }
+            $scope.homeUrl = function() {
+                $location.path('/home');
+            }
+            $scope.aboutUrl = function() {
+                $location.path('/about');
+            }
+            $scope.signVariable = function() {
+                if ($scope.signvar == "profile")
+                    $location.path('/dashboard');
+                else
+                    $location.path('/signup');
+            }
+            $scope.contactUrl = function() {
+                $location.path('/contactus');
+            }
+            $scope.greenUrl = function() {
+                $location.path('/gogreen');
+            }
+            $scope.searchUrl = function() {
+                $location.path('/searchnearby');
+            }
+
+            $scope.clothes_donations = function() {
+                $location.path('/cloth_donations');
+            }
+
+            $scope.cloth_new = function() {
+                if ($scope.clothQuan == "")
+                    $scope.errclothQuan = "Quantity must be filled out.";
+                else if ($scope.clothQuan < 1)
+                    $scope.errclothQuan = "Quantity should be atleast 1.";
+                else
+                    $scope.errclothQuan = "";
+
+                if ($scope.clothName == "")
+                    $scope.errclothName = "Clothes'name must be filled out.";
+                else
+                    $scope.errclothName = "";
+
+                if ($scope.clothQuan != "" && $scope.clothQuan >= 1 && $scope.clothName != "") {
+                    var id = $cookies.get('id');
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/donators/fetch.php",
+                        method: 'POST',
+                        data: {
+                            'id': id
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        if (resp.data.message == "Authorised") {
+                            $scope.did = resp.data.id;
+                            $http({
+                                url: "http://localhost/rest_giftaid/api/clothes/create.php",
+                                method: 'POST',
+                                data: {
+                                    'name': $scope.clothName,
+                                    'quantity': $scope.clothQuan,
+                                    'did': $scope.did
+                                },
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                }
+                            }).then(function(resp) {
+                                if (resp.data.message == "Created") {
+                                    $scope.message = "Your donation request is added.";
+                                    $location.path('/cloth_donations');
+                                } else {
+                                    console.log(resp);
+                                    $scope.message = "";
+                                    $location.path('/login');
+                                }
+                            }, function(resp) {
+                                console.log(resp);
+                            });
+                        } else {
+                            console.log(resp);
+                            $location.path('/login');
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    });
+
+                }
+            }
+
+            $scope.fetchClothPending = function() {
+                var did = $cookies.get('id');
+                $scope.message = "";
+                if (did) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/clothes/fetchPending.php",
+                        method: 'POST',
+                        data: {
+                            'did': did
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        for (var i = 0; i < resp.data.length; i++) {
+                            if (resp.data[i].message == "Authorised") {
+                                $scope.clothPending.push(resp.data[i]);
+                            }
+                        }
+                        if ($scope.clothPending.length == 0) {
+                            $scope.message = "No pending donations";
+                        } else {
+                            $scope.message = "";
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                    console.log(resp);
+                }
+            }
+
+            $scope.fetchClothPrevious = function() {
+                var did = $cookies.get('id');
+                $scope.message = "";
+                if (did) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/clothes/fetchPrevious.php",
+                        method: 'POST',
+                        data: {
+                            'did': did
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        for (var i = 0; i < resp.data.length; i++) {
+                            if (resp.data[i].message == "Authorised") {
+                                $scope.clothPrevious.push(resp.data[i]);
+                            }
+                        }
+                        if ($scope.clothPrevious.length == 0) {
+                            $scope.message = "No previous donations";
+                        } else {
+                            $scope.message = "";
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                    console.log(resp);
+                }
+            }
+
+            $scope.delCloth = function(cid) {
+                $http({
+                    url: "http://localhost/rest_giftaid/api/clothes/delete.php",
+                    method: 'DELETE',
+                    data: {
+                        'id': cid
+                    },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(function(resp) {
+                    $scope.delmsg = "Post Deleted.";
+                    window.location.reload('/cloth_pending');
+                }, function(resp) {
+                    console.log(resp);
+                    $scope.delmsg = "Post Not Deleted.";
+                });
+
+            }
+
+            $scope.cPending = function() {
+                $location.path('/cloth_pending');
+            }
+
+            $scope.cPrevious = function() {
+                $location.path('/cloth_previous');
+            }
+
+            $scope.books_donations = function() {
+                $location.path('/book_donations');
+            }
+
+            $scope.book_new = function() {
+                if ($scope.bookQuan == "")
+                    $scope.errbookQuan = "Quantity must be filled out.";
+                else if ($scope.bookQuan < 1)
+                    $scope.errbookQuan = "Quantity should be atleast 1.";
+                else
+                    $scope.errbookQuan = "";
+
+                if ($scope.bookName == "")
+                    $scope.errbookName = "Book's name must be filled out.";
+                else
+                    $scope.errbookName = "";
+
+                if ($scope.bookQuan != "" && $scope.bookQuan >= 1 && $scope.bookName != "") {
+                    var id = $cookies.get('id');
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/donators/fetch.php",
+                        method: 'POST',
+                        data: {
+                            'id': id
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        if (resp.data.message == "Authorised") {
+                            $scope.did = resp.data.id;
+                            $http({
+                                url: "http://localhost/rest_giftaid/api/books/create.php",
+                                method: 'POST',
+                                data: {
+                                    'name': $scope.bookName,
+                                    'quantity': $scope.bookQuan,
+                                    'did': $scope.did
+                                },
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                }
+                            }).then(function(resp) {
+                                if (resp.data.message == "Created") {
+                                    $scope.message = "Your donation request is added.";
+                                    $location.path('/book_donations');
+                                } else {
+                                    console.log(resp);
+                                    $scope.message = "";
+                                    $location.path('/login');
+                                }
+                            }, function(resp) {
+                                console.log(resp);
+                            });
+                        } else {
+                            console.log(resp);
+                            $location.path('/login');
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    });
+
+                }
+            }
+
+            $scope.fetchBookPending = function() {
+                var did = $cookies.get('id');
+                $scope.message = "";
+                if (did) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/books/fetchPending.php",
+                        method: 'POST',
+                        data: {
+                            'did': did
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        for (var i = 0; i < resp.data.length; i++) {
+                            if (resp.data[i].message == "Authorised") {
+                                $scope.bookPending.push(resp.data[i]);
+                            }
+                        }
+                        if ($scope.bookPending.length == 0) {
+                            $scope.message = "No pending donations";
+                        } else {
+                            $scope.message = "";
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                    console.log(resp);
+                }
+            }
+
+            $scope.fetchBookPrevious = function() {
+                var did = $cookies.get('id');
+                $scope.message = "";
+                if (did) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/books/fetchPrevious.php",
+                        method: 'POST',
+                        data: {
+                            'did': did
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        for (var i = 0; i < resp.data.length; i++) {
+                            if (resp.data[i].message == "Authorised") {
+                                $scope.bookPrevious.push(resp.data[i]);
+                            }
+                        }
+                        if ($scope.bookPrevious.length == 0) {
+                            $scope.message = "No previous donations";
+                        } else {
+                            $scope.message = "";
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                    console.log(resp);
+                }
+            }
+
+            $scope.delBook = function(bid) {
+                $http({
+                    url: "http://localhost/rest_giftaid/api/books/delete.php",
+                    method: 'DELETE',
+                    data: {
+                        'id': bid
+                    },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(function(resp) {
+                    $scope.delmsg = "Post Deleted.";
+                    window.location.reload('/book_pending');
+                }, function(resp) {
+                    console.log(resp);
+                    $scope.delmsg = "Post Not Deleted.";
+                });
+
+            }
+
+            $scope.bPending = function() {
+                $location.path('/book_pending');
+            }
+
+            $scope.bPrevious = function() {
+                $location.path('/book_previous');
+            }
+
+            $scope.electronics_donations = function() {
+                $location.path('/electronic_donations');
+            }
+
+            $scope.electronic_new = function() {
+                if ($scope.electronicQuan == "")
+                    $scope.errelectronicQuan = "Quantity must be filled out.";
+                else if ($scope.electronicQuan < 1)
+                    $scope.errelectronicQuan = "Quantity should be atleast 1.";
+                else
+                    $scope.errelectronicQuan = "";
+
+                if ($scope.electronicName == "")
+                    $scope.errelectronicName = "Electronic's name must be filled out.";
+                else
+                    $scope.errelectronicName = "";
+
+                if ($scope.electronicQuan != "" && $scope.electronicQuan >= 1 && $scope.electronicName != "") {
+                    var id = $cookies.get('id');
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/donators/fetch.php",
+                        method: 'POST',
+                        data: {
+                            'id': id
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        if (resp.data.message == "Authorised") {
+                            $scope.did = resp.data.id;
+                            $http({
+                                url: "http://localhost/rest_giftaid/api/electronics/create.php",
+                                method: 'POST',
+                                data: {
+                                    'name': $scope.electronicName,
+                                    'quantity': $scope.electronicQuan,
+                                    'did': $scope.did
+                                },
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                }
+                            }).then(function(resp) {
+                                if (resp.data.message == "Created") {
+                                    $scope.message = "Your donation request is added.";
+                                    $location.path('/electronic_donations');
+                                } else {
+                                    console.log(resp);
+                                    $scope.message = "";
+                                    $location.path('/login');
+                                }
+                            }, function(resp) {
+                                console.log(resp);
+                            });
+                        } else {
+                            console.log(resp);
+                            $location.path('/login');
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    });
+
+                }
+            }
+
+            $scope.fetchElectronicPending = function() {
+                var did = $cookies.get('id');
+                $scope.message = "";
+                if (did) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/electronics/fetchPending.php",
+                        method: 'POST',
+                        data: {
+                            'did': did
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        for (var i = 0; i < resp.data.length; i++) {
+                            if (resp.data[i].message == "Authorised") {
+                                $scope.electronicPending.push(resp.data[i]);
+                            }
+                        }
+                        if ($scope.electronicPending.length == 0) {
+                            $scope.message = "No pending donations";
+                        } else {
+                            $scope.message = "";
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                    console.log(resp);
+                }
+            }
+
+            $scope.fetchElectronicPrevious = function() {
+                var did = $cookies.get('id');
+                $scope.message = "";
+                if (did) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/electronics/fetchPrevious.php",
+                        method: 'POST',
+                        data: {
+                            'did': did
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        for (var i = 0; i < resp.data.length; i++) {
+                            if (resp.data[i].message == "Authorised") {
+                                $scope.electronicPrevious.push(resp.data[i]);
+                            }
+                        }
+                        if ($scope.electronicPrevious.length == 0) {
+                            $scope.message = "No previous donations";
+                        } else {
+                            $scope.message = "";
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                    console.log(resp);
+                }
+            }
+
+            $scope.delElectronic = function(eid) {
+                $http({
+                    url: "http://localhost/rest_giftaid/api/electronics/delete.php",
+                    method: 'DELETE',
+                    data: {
+                        'id': eid
+                    },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(function(resp) {
+                    $scope.delmsg = "Post Deleted.";
+                    window.location.reload('/electronic_pending');
+                }, function(resp) {
+                    console.log(resp);
+                    $scope.delmsg = "Post Not Deleted.";
+                });
+
+            }
+
+            $scope.ePending = function() {
+                $location.path('/electronic_pending');
+            }
+
+            $scope.ePrevious = function() {
+                $location.path('/electronic_previous');
+            }
+
+            $scope.medicines_donations = function() {
+                $location.path('/medicine_donations');
+            }
+
+            $scope.medicine_new = function() {
+                console.log($scope);
+                if ($scope.medicineQuan == "")
+                    $scope.errmedicineQuan = "Quantity must be filled out.";
+                else if ($scope.medicineQuan < 1)
+                    $scope.errmedicineQuan = "Quantity should be atleast 1.";
+                else
+                    $scope.errmedicineQuan = "";
+
+                if ($scope.medicineName == "")
+                    $scope.errmedicineName = "Medicine's name must be filled out.";
+                else
+                    $scope.errmedicineName = "";
+
+
+                if ($scope.medicineQuan != "" && $scope.medicineQuan >= 1 && $scope.medicineName != "") {
+                    var id = $cookies.get('id');
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/donators/fetch.php",
+                        method: 'POST',
+                        data: {
+                            'id': id
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        if (resp.data.message == "Authorised") {
+                            $scope.did = resp.data.id;
+                            $http({
+                                url: "http://localhost/rest_giftaid/api/medicines/create.php",
+                                method: 'POST',
+                                data: {
+                                    'name': $scope.medicineName,
+                                    'quantity': $scope.medicineQuan,
+                                    'did': $scope.did
+                                },
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                }
+                            }).then(function(resp) {
+                                if (resp.data.message == "Created") {
+                                    $scope.message = "Your donation request is added.";
+                                    $location.path('/medicine_donations');
+                                } else {
+                                    console.log(resp);
+                                    $scope.message = "";
+                                    $location.path('/login');
+                                }
+                            }, function(resp) {
+                                console.log(resp);
+                            });
+                        } else {
+                            console.log(resp);
+                            $location.path('/login');
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    });
+
+                }
+            }
+
+            $scope.fetchMedicinePending = function() {
+                var did = $cookies.get('id');
+                $scope.message = "";
+                if (did) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/medicines/fetchPending.php",
+                        method: 'POST',
+                        data: {
+                            'did': did
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        for (var i = 0; i < resp.data.length; i++) {
+                            if (resp.data[i].message == "Authorised") {
+                                $scope.medicinePending.push(resp.data[i]);
+                            }
+                        }
+                        if ($scope.medicinePending.length == 0) {
+                            $scope.message = "No pending donations";
+                        } else {
+                            $scope.message = "";
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                    console.log(resp);
+                }
+            }
+
+            $scope.fetchMedicinePrevious = function() {
+                var did = $cookies.get('id');
+                $scope.message = "";
+                if (did) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/medicines/fetchPrevious.php",
+                        method: 'POST',
+                        data: {
+                            'did': did
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        for (var i = 0; i < resp.data.length; i++) {
+                            if (resp.data[i].message == "Authorised") {
+                                $scope.medicinePrevious.push(resp.data[i]);
+                            }
+                        }
+                        if ($scope.medicinePrevious.length == 0) {
+                            $scope.message = "No previous donations";
+                        } else {
+                            $scope.message = "";
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                    console.log(resp);
+                }
+            }
+
+            $scope.delMedicine = function(mid) {
+                $http({
+                    url: "http://localhost/rest_giftaid/api/medicines/delete.php",
+                    method: 'DELETE',
+                    data: {
+                        'id': mid
+                    },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(function(resp) {
+                    $scope.delmsg = "Post Deleted.";
+                    window.location.reload('/medicine_pending');
+                }, function(resp) {
+                    console.log(resp);
+                    $scope.delmsg = "Post Not Deleted.";
+                });
+
+            }
+
+            $scope.mPending = function() {
+                $location.path('/medicine_pending');
+            }
+
+            $scope.mPrevious = function() {
+                $location.path('/medicine_previous');
+            }
+
+            $scope.furnitures_donations = function() {
+                $location.path('/furniture_donations');
+            }
+
+            $scope.furniture_new = function() {
+                if ($scope.furnitureQuan == "")
+                    $scope.errfurnitureQuan = "Quantity must be filled out.";
+                else if ($scope.furnitureQuan < 1)
+                    $scope.errfurnitureQuan = "Quantity should be atleast 1.";
+                else
+                    $scope.errfurnitureQuan = "";
+
+                if ($scope.furnitureName == "")
+                    $scope.errfurnitureName = "Furniture's name must be filled out.";
+                else
+                    $scope.errfurnitureName = "";
+
+                if ($scope.furnitureQuan != "" && $scope.furnitureQuan >= 1 && $scope.furnitureName != "") {
+                    var id = $cookies.get('id');
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/donators/fetch.php",
+                        method: 'POST',
+                        data: {
+                            'id': id
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        if (resp.data.message == "Authorised") {
+                            $scope.did = resp.data.id;
+                            $http({
+                                url: "http://localhost/rest_giftaid/api/furnitures/create.php",
+                                method: 'POST',
+                                data: {
+                                    'name': $scope.furnitureName,
+                                    'quantity': $scope.furnitureQuan,
+                                    'did': $scope.did
+                                },
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                }
+                            }).then(function(resp) {
+                                if (resp.data.message == "Created") {
+                                    $scope.message = "Your donation request is added.";
+                                    $location.path('/furniture_donations');
+                                } else {
+                                    console.log(resp);
+                                    $scope.message = "";
+                                    $location.path('/login');
+                                }
+                            }, function(resp) {
+                                console.log(resp);
+                            });
+                        } else {
+                            console.log(resp);
+                            $location.path('/login');
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    });
+
+                }
+            }
+
+            $scope.fetchFurniturePending = function() {
+                var did = $cookies.get('id');
+                $scope.message = "";
+                if (did) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/furnitures/fetchPending.php",
+                        method: 'POST',
+                        data: {
+                            'did': did
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        for (var i = 0; i < resp.data.length; i++) {
+                            if (resp.data[i].message == "Authorised") {
+                                $scope.furniturePending.push(resp.data[i]);
+                            }
+                        }
+                        if ($scope.furniturePending.length == 0) {
+                            $scope.message = "No pending donations";
+                        } else {
+                            $scope.message = "";
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                    console.log(resp);
+                }
+            }
+
+            $scope.fetchFurniturePrevious = function() {
+                var did = $cookies.get('id');
+                $scope.message = "";
+                if (did) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/furnitures/fetchPrevious.php",
+                        method: 'POST',
+                        data: {
+                            'did': did
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        for (var i = 0; i < resp.data.length; i++) {
+                            if (resp.data[i].message == "Authorised") {
+                                $scope.furniturePrevious.push(resp.data[i]);
+                            }
+                        }
+                        if ($scope.furniturePrevious.length == 0) {
+                            $scope.message = "No previous donations";
+                        } else {
+                            $scope.message = "";
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                    console.log(resp);
+                }
+            }
+
+            $scope.delFurniture = function(fid) {
+                $http({
+                    url: "http://localhost/rest_giftaid/api/furnitures/delete.php",
+                    method: 'DELETE',
+                    data: {
+                        'id': fid
+                    },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(function(resp) {
+                    $scope.delmsg = "Post Deleted.";
+                    window.location.reload('/furniture_pending');
+                }, function(resp) {
+                    console.log(resp);
+                    $scope.delmsg = "Post Not Deleted.";
+                });
+
+            }
+
+            $scope.fPending = function() {
+                $location.path('/furniture_pending');
+            }
+
+            $scope.fPrevious = function() {
+                $location.path('/furniture_previous');
+            }
+
+            $scope.sports_donations = function() {
+                $location.path('/sport_donations');
+            }
+
+            $scope.sport_new = function() {
+                if ($scope.sportQuan == "")
+                    $scope.errsportQuan = "Quantity must be filled out.";
+                else if ($scope.sportQuan < 1)
+                    $scope.errsportQuan = "Quantity should be atleast 1.";
+                else
+                    $scope.errsportQuan = "";
+
+                if ($scope.sportName == "")
+                    $scope.errsportName = "sport's name must be filled out.";
+                else
+                    $scope.errsportName = "";
+
+                if ($scope.sportQuan != "" && $scope.sportQuan >= 1 && $scope.sportName != "") {
+                    var id = $cookies.get('id');
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/donators/fetch.php",
+                        method: 'POST',
+                        data: {
+                            'id': id
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        if (resp.data.message == "Authorised") {
+                            $scope.did = resp.data.id;
+                            $http({
+                                url: "http://localhost/rest_giftaid/api/sports/create.php",
+                                method: 'POST',
+                                data: {
+                                    'name': $scope.sportName,
+                                    'quantity': $scope.sportQuan,
+                                    'did': $scope.did
+                                },
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                }
+                            }).then(function(resp) {
+                                if (resp.data.message == "Created") {
+                                    $scope.message = "Your donation request is added.";
+                                    $location.path('/sport_donations');
+                                } else {
+                                    console.log(resp);
+                                    $scope.message = "";
+                                    $location.path('/login');
+                                }
+                            }, function(resp) {
+                                console.log(resp);
+                            });
+                        } else {
+                            console.log(resp);
+                            $location.path('/login');
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    });
+
+                }
+            }
+
+            $scope.fetchSportPending = function() {
+                var did = $cookies.get('id');
+                $scope.message = "";
+                if (did) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/sports/fetchPending.php",
+                        method: 'POST',
+                        data: {
+                            'did': did
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        for (var i = 0; i < resp.data.length; i++) {
+                            if (resp.data[i].message == "Authorised") {
+                                $scope.sportPending.push(resp.data[i]);
+                            }
+                        }
+                        if ($scope.sportPending.length == 0) {
+                            $scope.message = "No pending donations";
+                        } else {
+                            $scope.message = "";
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                    console.log(resp);
+                }
+            }
+
+            $scope.fetchSportPrevious = function() {
+                var did = $cookies.get('id');
+                $scope.message = "";
+                if (did) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/sports/fetchPrevious.php",
+                        method: 'POST',
+                        data: {
+                            'did': did
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        for (var i = 0; i < resp.data.length; i++) {
+                            if (resp.data[i].message == "Authorised") {
+                                $scope.sportPrevious.push(resp.data[i]);
+                            }
+                        }
+                        if ($scope.sportPrevious.length == 0) {
+                            $scope.message = "No previous donations";
+                        } else {
+                            $scope.message = "";
+                        }
+                    }, function(resp) {
+                        console.log(resp);
+                    })
+                } else {
+                    $location.path('/login');
+                    console.log(resp);
+                }
+            }
+
+            $scope.delSport = function(sid) {
+                $http({
+                    url: "http://localhost/rest_giftaid/api/sports/delete.php",
+                    method: 'DELETE',
+                    data: {
+                        'id': sid
+                    },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(function(resp) {
+                    $scope.delmsg = "Post Deleted.";
+                    window.location.reload('/sport_pending');
+                }, function(resp) {
+                    console.log(resp);
+                    $scope.delmsg = "Post Not Deleted.";
+                });
+
+            }
+
+            $scope.sPending = function() {
+                $location.path('/sport_pending');
+            }
+
+            $scope.sPrevious = function() {
+                $location.path('/sport_previous');
+            }
+        }]);
+
+        app.controller('sign', ['$scope', '$http', '$location', function($scope, $http, $location) {
+            $scope.name = "";
+            $scope.message = "";
+            $scope.age = "";
+            $scope.address = "";
+            $scope.city = "";
+            $scope.state = "";
+            $scope.pincode = "";
+            $scope.phone = "";
+            $scope.email = "";
+            $scope.pwd = "";
+            $scope.cpwd = "";
+            $scope.errname = "";
+            $scope.errage = "";
+            $scope.erraddress = "";
+            $scope.errcity = "";
+            $scope.errstate = "";
+            $scope.errpincode = "";
+            $scope.errphone = "";
+            $scope.erremail = "";
+            $scope.errpwd = "";
+            $scope.errcpwd = "";
+            $scope.signUp = function() {
+
+                if ($scope.name == "")
+                    $scope.errname = "Name must be filled out.";
+                else if (!/^[a-zA-Z\s]*$/.test($scope.name))
+                    $scope.errname = "Name should only contain letters.";
+                else
+                    $scope.errname = "";
+
+                if ($scope.age == "")
+                    $scope.errage = "Age must be filled out.";
+                else if ($scope.age < 18)
+                    $scope.errage = "You are a minor.";
+                else
+                    $scope.errage = "";
+
+                if ($scope.address == "")
+                    $scope.erraddress = "Address must be filled out.";
+                else
+                    $scope.erraddress = "";
+
+                if ($scope.city == "")
+                    $scope.errcity = "City must be filled out.";
+                else
+                    $scope.errcity = "";
+
+                if ($scope.state == "")
+                    $scope.errstate = "State must be filled out.";
+                else
+                    $scope.errstate = "";
+
+                if ($scope.pincode == "")
+                    $scope.errpincode = "Pincode must be filled out.";
+                else if ($scope.pincode.toString().length != 6)
+                    $scope.errpincode = "Pincode must contain 6 numbers.";
+                else
+                    $scope.errpincode = "";
+
+                if ($scope.phone == "")
+                    $scope.errphone = "Contact Number must be filled out";
+                else if ($scope.phone.toString().length != 10)
+                    $scope.errphone = "Contact Number must contain 10 numbers.";
+                else
+                    $scope.errphone = "";
+
+                if ($scope.email == "")
+                    $scope.erremail = "Email must be filled out.";
+                else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.email))
+                    $scope.erremail = "Invalid Email.";
+                else
+                    $scope.erremail = "";
+
+                if ($scope.pwd == "")
+                    $scope.errpwd = "Password must be filled out.";
+                else if ($scope.pwd.length < 8)
+                    $scope.errpwd = "Password must be atleast of 8 characters.";
+                else if (!/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/.test($scope.pwd))
+                    $scope.errpwd = "Password should contain [a-z], [A-Z], [0-9] and special characters."
+                else
+                    $scope.errpwd = "";
+
+                if ($scope.cpwd == "")
+                    $scope.errcpwd = "Password must be filled out";
+                else if ($scope.cpwd != $scope.pwd)
+                    $scope.errcpwd = "Both Password do not match";
+                else
+                    $scope.errcpwd = "";
+
+
+                if ($scope.name != "" && /^[a-zA-Z\s]*$/.test($scope.name) && $scope.age != "" && $scope.age >= 18 && $scope.address != "" && $scope.city != "" && $scope.state != "" && $scope.pincode != "" && $scope.pincode.toString().length == 6 && $scope.phone != "" && $scope.phone.toString().length == 10 && $scope.email != "" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.email) && $scope.pwd != "" && $scope.pwd.length >= 8 && /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/.test($scope.pwd) && $scope.cpwd != "" && $scope.cpwd == $scope.pwd) {
+                    $http({
+                        url: "http://localhost/rest_giftaid/api/donators/create.php",
+                        method: 'POST',
+                        data: {
+                            'name': $scope.name,
+                            'age': $scope.age,
+                            'address': $scope.address,
+                            'city': $scope.city,
+                            'state': $scope.state,
+                            'pincode': $scope.pincode,
+                            'phone': $scope.phone,
+                            'email': $scope.email,
+                            'pwd': $scope.pwd
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function(resp) {
+                        $scope.message = resp.data.message;
+                        $location.path('\login');
+                    }, function(resp) {
+                        console.log(resp);
+                    });
+                }
+            }
+            $scope.reset = function() {
+                $scope.name = "";
+                $scope.message = "";
+                $scope.age = "";
+                $scope.address = "";
+                $scope.city = "";
+                $scope.state = "";
+                $scope.pincode = "";
+                $scope.phone = "";
+                $scope.email = "";
+                $scope.pwd = "";
+                $scope.cpwd = "";
+            }
+
+            $scope.already = function() {
+                $location.path('\login');
+            }
+        }]);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<div ng-controller="dashboardCtrl" style="color: whitesmoke;">
+    <div class="container-fluid">
+        <div class="jumbotron" style="margin-top:50px;height:250px;background-size:cover;color:white;background-image: url(images/furniture.jpg);">
+            <h1><b>Furniture is never a waste</b></h1>
+            <h3><b>Just need to find the right place.</b></h3>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse middle col-sm-12 col-md-12 col-xs-12 col-lg-12 middleNavbar" style="width:100%; overflow: auto;">
+        <div class="container-fluid">
+            <div class="navbar-header" style="width:100%">
+                <ul class="nav navbar-nav" style="width:100%;">
+                    <li id="link4-furniture"><a href="" id="link1-furniture" ng-click="clothes_donations()"><img src="images/Clothes.png" class="icon">&nbsp;<b class="hidden-xs">Clothes</b></a></li>
+                    <li id="link4-furniture"><a href="" id="link1-furniture" ng-click="books_donations()"><img src="images/Books.png" class="icon">&nbsp;<b class="hidden-xs">Books</b></a></li>
+                    <li id="link4-furniture"><a href="http://localhost/Giftaid/index.html?#!/electronic_donations" id="link1-furniture" ng-click="electronics_donations()"><img src="images/electronics.png" class="icon">&nbsp;<b class="hidden-xs">Electronics</b></a></li>
+                    <li id="link4-furniture"><a href="" id="link1-furniture" ng-click="medicines_donations()"><img src="images/medicines.png" class="icon">&nbsp;<b class="hidden-xs">Medicines</b></a></li>
+                    <li id="link3-furniture"><a href="" id="link1-furniture" style="color:#39D96D;" ng-click="furnitures_donations()"><img src="images/furniture.png" class="icon">&nbsp;<b class="hidden-xs">Furniture</b></a></li>
+                    <li id="link4-furniture"><a href="" id="link1-furniture" ng-click="sports_donations()"><img src="images/sports.png" class="icon">&nbsp;<b class="hidden-xs">Sports</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron" style="background-color:#BBF4CE; text-align:center;">
+            <p id="heading-furniture">&nbsp;&nbsp;&nbsp;<b>Furnitures Donation Form<br>
+                    <font style="font-size: 16px;color:#39D96D;">{{message}}</font>
+                </b></p>
+            <form class="form-horizontal" action="">
+                <div class="form-group form-furniture">
+                    <div>
+                        <input type="name" class="form-control furniture" placeholder="Furniture's name" ng-model="furnitureName">{{errfurnitureName}}
+                    </div>
+                </div>
+                <div class="form-group form-furniture">
+                    <div>
+                        <input type="quantity" class="form-control furniture" placeholder="Quantity" ng-model="furnitureQuan">{{errFurnitureQuan}}
+                    </div>
+                </div>
+                <div class="form-group form-furniture">
+                    <div>
+                        <button type="submit" class="btn btn-default" style="background-color:#39D96D;color:white;" ng-click="furniture_new()"><b>Submit</b></button>
+                    </div>
+                </div>
+            </form>
+            <br />
+            <div class="col-sm-6 col-xs-12 links">
+                <a href="" ng-click="fPrevious()" style="color:black;" class="links">
+                    <b><u>View Your Previous Donations</u></b>
+                </a>
+            </div>
+            <div class="col-sm-6 col-xs-12 links">
+                <a href="" ng-click="fPending()" style="color:black;" class="links">
+                    <b><u>View Your Pending Donations</u></b>
+                </a>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

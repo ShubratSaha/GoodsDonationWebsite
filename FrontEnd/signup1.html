@@ -1,0 +1,107 @@
+<div ng-controller="sign">
+    <div class="container-fluid headDiv">
+        <br><br><br>
+        <div style="float: right;">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+        </div><br><br>
+        <h1 class="title">Sign Up...</h1>
+        <h6 class="sub-title"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@giftAid</h6><br>
+    </div>
+    <div class="container-fluid middleDivSignUp">
+        <br><br><br><br>
+        <form class="form-horizontal" action="">
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <img src="images/defaultsignup.png" style="border-radius: 50%;height: 200px; width: 200px;">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="text" class="form-control" placeholder="Name" ng-model="name">{{errname}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="text" class="form-control" placeholder="Age" ng-model="age">{{errage}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="text" class="form-control" placeholder="Address" ng-model="address">{{erraddress}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="text" class="form-control" placeholder="City" ng-model="city">{{errcity}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="text" class="form-control" placeholder="State" ng-model="state">{{errstate}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="text" class="form-control" placeholder="Pincode" ng-model="pincode">{{errpincode}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="text" class="form-control" placeholder="Contact Number" ng-model="phone">{{errphone}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="text" class="form-control" placeholder="Email" ng-model="email">{{erremail}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="password" class="form-control" placeholder="Password" ng-model="pwd">{{errpwd}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="password" class="form-control" placeholder="Confirm Password" ng-model="cpwd">{{errcpwd}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-default" ng-click="signUp()"><b>Submit</b></button>
+                    <button type="reset" class="btn btn-default" ng-click="reset()"><b>Reset</b></button>
+                </div>
+            </div>
+            <p style="color:white;text-align:center;">Already have an account?<font class="hidden-sm hidden-md hidden-lg">&nbsp;&nbsp;&nbsp;&nbsp;</font>
+                <font class="hidden-xs hidden-lg" style="margin-left: 10%;">&nbsp;&nbsp;&nbsp;&nbsp;</font><a href="" ng-click="already()" style="color:white;">Login here</a>
+            </p>
+        </form>
+    </div>
+    <div class="container-fluid lastDiv">
+        <div class="row">
+            <div class="leftLastDiv col-md-offset-2 col-md-4 col-sm-offset-4 col-sm-4 col-xs-offset-3 col-xs-9">
+                <h4>Contact Us</h4>
+                <br>
+                <a href=""><span class="glyphicon glyphicon-map-marker"></span>&nbsp; Centurion University, <br>Jatani, Odisha</a><br><br><br>
+                <a href=""><span class="glyphicon glyphicon-earphone"></span>&nbsp; (+91)8700798716 </a><br /><br>
+                <a href=""><span class="glyphicon glyphicon-envelope"></span>&nbsp; contact@giftaid.com</a><br><br>
+                <!--<a href=""><span class="glyphicon glyphicon-user"></span>&nbsp; Staff Login</a><br><br>-->
+                <div style="float: left;">
+                    <a href="" class="fa fa-facebook"></a>
+                    <a href="" class="fa fa-twitter"></a>
+                    <a href="" class="fa fa-google"></a>
+                    <a href="" class="fa fa-linkedin"></a>
+                    <a href="" class="fa fa-youtube"></a>
+                    <a href="" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="rightLastDiv col-md-5 col-sm-5 col-xs-6 hiddenMap">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3745.2558063811684!2d85.70445001471259!3d20.175580121730928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19aec948fe62ef%3A0xb6c968c7957b6b4f!2sCenturion+University+of+Technology+%26+Management+%2C+Bhubaneswar!5e0!3m2!1sen!2sus!4v1553362607370" width="100%" height="280" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>

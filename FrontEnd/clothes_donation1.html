@@ -1,0 +1,59 @@
+<div ng-controller="dashboardCtrl" style="color: whitesmoke;">
+    <div class="container-fluid">
+        <div class="jumbotron" style="margin-top:50px;height:250px;background-size:cover;color:white;background-image: url(images/clothes.jpg);">
+            <h1><b>Style The Needy</b></h1>
+            <h3><b>From something in your closet.</b></h3>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse middle col-sm-12 col-md-12 col-xs-12 col-lg-12 middleNavbar" style="width:100%; overflow: auto;">
+        <div class="container-fluid">
+            <div class="navbar-header" style="width:100%">
+                <ul class="nav navbar-nav" style="width:100%;">
+                    <li id="link3-cloth"><a href="" id="link1-cloth" ng-click="clothes_donations()" style="color:#80BEBD;"><img src="images/clothes.png" class="icon">&nbsp;<b class="hidden-xs">Clothes</b></a></li>
+                    <li id="link4-cloth"><a href="" id="link1-cloth" ng-click="books_donations()"><img src="images/books.png" class="icon">&nbsp;<b class="hidden-xs">Books</b></a></li>
+                    <li id="link4-cloth"><a href="" id="link1-cloth" ng-click="electronics_donations()" electronics><img src="images/electronics.png" class="icon">&nbsp;<b class="hidden-xs">Electronics</b></a></li>
+                    <li id="link4-cloth"><a href="" id="link1-cloth" ng-click="medicines_donations()"><img src="images/medicines.png" class="icon">&nbsp;<b class="hidden-xs">Medicines</b></a></li>
+                    <li id="link4-cloth"><a href="" id="link1-cloth" ng-click="furnitures_donations()"><img src="images/furniture.png" class="icon">&nbsp;<b class="hidden-xs">Furniture</b></a></li>
+                    <li id="link4-cloth"><a href="" id="link1-cloth" ng-click="sports_donations()"><img src="images/sports.png" class="icon">&nbsp;<b class="hidden-xs">Sports</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron" style="background-color:#E8F6F6; text-align:center;">
+            <p id="heading-cloth">&nbsp;&nbsp;&nbsp;<b>Clothes Donation Form<br>
+                    <font style="font-size: 16px; color: #80BEBD;">{{message}}</font>
+                </b></p>
+            <form class="form-horizontal" action="">
+                <div class="form-group form-cloth">
+                    <div>
+                        <input type="name" class="form-control cloth" placeholder="Clothes' name" ng-model="clothName">{{errclothName}}
+                    </div>
+                </div>
+                <div class="form-group form-cloth">
+                    <div>
+                        <input type="quantity" class="form-control cloth" placeholder="Quantity" ng-model="clothQuan">{{errclothQuan}}
+                    </div>
+                </div>
+                <div class="form-group form-cloth">
+                    <div>
+                        <button type="submit" class="btn btn-default" style="background-color:#80BEBD;color:white;" ng-click="cloth_new()"><b>Submit</b></button>
+                    </div>
+                </div>
+            </form>
+            <br />
+            <div class="col-sm-6 col-xs-12 links">
+                <a href="" ng-click="cPrevious()" style="color:black;" class="links">
+                    <b><u>View Your Previous Donations</u></b>
+                </a>
+            </div>
+            <div class="col-sm-6 col-xs-12 links">
+                <a href="" ng-click="cPending()" style="color:black;" class="links">
+                    <b><u>View Your Pending Donations</u></b>
+                </a>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

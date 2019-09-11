@@ -1,0 +1,59 @@
+<div ng-controller="dashboardCtrl" style="color: whitesmoke;">
+    <div class="container-fluid">
+        <div class="jumbotron" style="margin-top:50px;height:250px;background-size:cover;color:white;background-image: url(images/technology.jpg);">
+            <h1><b>Electronics are never a waste</b></h1>
+            <h3><b>It might get slow, but better than nothing.</b></h3>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse middle col-sm-12 col-md-12 col-xs-12 col-lg-12 middleNavbar" style="width:100%; overflow: auto;">
+        <div class="container-fluid">
+            <div class="navbar-header" style="width:100%">
+                <ul class="nav navbar-nav" style="width:100%;">
+                    <li id="link4-electronic"><a href="" id="link1-electronic" ng-click="clothes_donations()"><img src="images/Clothes.png" class="icon">&nbsp;<b class="hidden-xs">Clothes</b></a></li>
+                    <li id="link4-electronic"><a href="" id="link1-electronic" ng-click="books_donations()"><img src="images/Books.png" class="icon">&nbsp;<b class="hidden-xs">Books</b></a></li>
+                    <li id="link3-electronic"><a href="" id="link1-electronic" ng-click="electronics_donations()" style="color:#3CBFFE;"><img src="images/electronics.png" class="icon">&nbsp;<b class="hidden-xs">Electronics</b></a></li>
+                    <li id="link4-electronic"><a href="" id="link1-electronic" ng-click="medicines_donations()"><img src="images/medicines.png" class="icon">&nbsp;<b class="hidden-xs">Medicines</b></a></li>
+                    <li id="link4-electronic"><a href="" id="link1-electronic" ng-click="furnitures_donations()"><img src="images/furniture.png" class="icon">&nbsp;<b class="hidden-xs">Furniture</b></a></li>
+                    <li id="link4-electronic"><a href="" id="link1-electronic" ng-click="sports_donations()"><img src="images/sports.png" class="icon">&nbsp;<b class="hidden-xs">Sports</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron" style="background-color:#D7F1FF; text-align:center;">
+            <p id="heading-electronic">&nbsp;&nbsp;&nbsp;<b>Electronics Donation Form<br>
+                    <font style="font-size: 16px;color:#3CBFFE;">{{message}}</font>
+                </b></p>
+            <form class="form-horizontal" action="">
+                <div class="form-group form-electronic">
+                    <div>
+                        <input type="name" class="form-control electronic" placeholder="Electronic's name" ng-model="electronicName">{{errelectronicName}}
+                    </div>
+                </div>
+                <div class="form-group form-electronic">
+                    <div>
+                        <input type="quantity" class="form-control electronic" placeholder="Quantity" ng-model="electronicQuan">{{errelectronicQuan}}
+                    </div>
+                </div>
+                <div class="form-group form-electronic">
+                    <div>
+                        <button type="submit" class="btn btn-default" style="background-color:#3CBFFE;color:white;" ng-click="electronic_new()"><b>Submit</b></button>
+                    </div>
+                </div>
+            </form>
+            <br />
+            <div class="col-sm-6 col-xs-12 links">
+                <a href="" ng-click="ePrevious()" style="color:black;" class="links">
+                    <b><u>View Your Previous Donations</u></b>
+                </a>
+            </div>
+            <div class="col-sm-6 col-xs-12 links">
+                <a href="" ng-click="ePending()" style="color:black;" class="links">
+                    <b><u>View Your Pending Donations</u></b>
+                </a>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

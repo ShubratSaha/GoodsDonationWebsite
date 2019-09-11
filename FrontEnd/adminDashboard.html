@@ -1,0 +1,66 @@
+<div ng-controller="dashboardCtrl" ng-init="userData()">
+    <div class="container-fluid headDiv">
+    </div>
+    <div class="container-fluid middleDivDashboard">
+        <div class="col-xs-12" style="margin-top: -150px;">
+            <img src="images/defaultsignup.png" style="border-radius: 50%;height: 200px; width: 200px;">
+        </div>
+        <div class="col-xs-12">
+            <span style="font-size:30px;">{{name}}</span>
+        </div>
+        <div class="col-xs-12">
+            <span style="font-size:15px;">{{email}}</span>
+        </div>
+        <div class="col-xs-12">
+            <span style="font-size:15px;">{{role}}</span><br><br>
+        </div><br><br>
+        <div class="row">
+            <div class="dashboardDiv" style="text-align: center;">
+                <a href="" style="text-align: center;" ng-click="edit_profile()">
+                    <img src="images/user.png" class="divImages"><br>
+                    <span class="dashboardSpan">Edit Profile</span>
+                </a>
+            </div>
+            <div class="dashboardDiv" style="text-align: center;">
+                <a href="" style="text-align: center;" ng-click="clothes_donations()">
+                    <img src="images/manager.png" class="divImages"><br>
+                    <span class="dashboardSpan">Administators</span>
+                </a>
+            </div>
+            <div class="dashboardDiv" style="text-align: center;">
+                <a href="" style="text-align: center;">
+                    <img src="images/employee.png" class="divImages"><br>
+                    <span class="dashboardSpan">Staffs</span>
+                </a>
+            </div>
+            <div class="dashboardDiv" style="text-align: center;">
+                <a href="" style="text-align: center;" ng-click="contactUrl()">
+                    <img src="images/delivery-man.png" class="divImages"><br>
+                    <span class="dashboardSpan">Delivery Persons</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid lastDiv">
+        <div class="row">
+            <div class="leftLastDiv col-md-offset-2 col-md-4 col-sm-offset-4 col-sm-4 col-xs-offset-3 col-xs-9">
+                <h4>Contact Us</h4>
+                <br>
+                <a href=""><span class="glyphicon glyphicon-map-marker"></span>&nbsp; Centurion University, <br>Jatani, Odisha</a><br><br><br>
+                <a href=""><span class="glyphicon glyphicon-earphone"></span>&nbsp; (+91)8700798716 </a><br /><br>
+                <a href=""><span class="glyphicon glyphicon-envelope"></span>&nbsp; contact@giftaid.com</a><br><br>
+                <div style="float: left;">
+                    <a href="" class="fa fa-facebook"></a>
+                    <a href="" class="fa fa-twitter"></a>
+                    <a href="" class="fa fa-google"></a>
+                    <a href="" class="fa fa-linkedin"></a>
+                    <a href="" class="fa fa-youtube"></a>
+                    <a href="" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="rightLastDiv col-md-5 col-sm-5 col-xs-6 hiddenMap">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3745.2558063811684!2d85.70445001471259!3d20.175580121730928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19aec948fe62ef%3A0xb6c968c7957b6b4f!2sCenturion+University+of+Technology+%26+Management+%2C+Bhubaneswar!5e0!3m2!1sen!2sus!4v1553362607370" width="100%" height="280" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>

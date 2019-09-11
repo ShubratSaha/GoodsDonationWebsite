@@ -1,0 +1,57 @@
+<div ng-controller="dashboardCtrl" ng-init="fetchBookPending()" style="color: whitesmoke;">
+    <div class="container-fluid">
+        <div class="jumbotron" style="margin-top:50px;height:250px;background-size:cover;color:white;background-image: url(images/books-wp.png);">
+            <h1><b>Educate The Needy</b></h1>
+            <h3><b>From your books.</b></h3>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse middle col-sm-12 col-md-12 col-xs-12 col-lg-12 middleNavbar" style="width:100%; overflow: auto;">
+        <div class="container-fluid">
+            <div class="navbar-header" style="width:100%">
+                <ul class="nav navbar-nav" style="width:100%;text-align: left;">
+                    <li id="link4-book"><a href="" id="link1-book" ng-click="clothes_donations()"><img src="images/clothes.png" class="icon">&nbsp;<b class="hidden-xs">Clothes</b></a></li>
+                    <li id="link3-book"><a href="" id="link1-book" style="color:#A777C0;" ng-click="books_donations()"><img src="images/books.png" class="icon">&nbsp;<b class="hidden-xs">Books</b></a></li>
+                    <li id="link4-book"><a href="" id="link1-book" ng-click="electronics_donations()"><img src="images/electronics.png" class="icon">&nbsp;<b class="hidden-xs">Electronic</b></a></li>
+                    <li id="link4-book"><a href="" id="link1-book" ng-click="medicines_donations()"><img src="images/medicines.png" class="icon">&nbsp;<b class="hidden-xs">Medicines</b></a></li>
+                    <li id="link4-book"><a href="" id="link1-book" ng-click="furnitures_donations()"><img src="images/furniture.png" class="icon">&nbsp;<b class="hidden-xs">Furniture</b></a></li>
+                    <li id="link4-book"><a href="h" id="link1-book" ng-click="sports_donations()"><img src="images/sports.png" class="icon">&nbsp;<b class="hidden-xs">Sports</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron" style="background-color:#F0D3FF;">
+            <div class="donations" style="background-color:#F0D3FF;">
+                <span style="text-align: center;color:#A777C0;">
+                    <h1>{{message}}</h1>
+                </span>
+                <br>
+                <span style="text-align: center;color:#A777C0;">
+                    <h4>{{delmsg}}</h4>
+                </span>
+                <table>
+                    <tr class="tablerow" ng-repeat="x in bookPending">
+                        <td>
+                            <div style="color:white;"><br /><img src="images/books.png" class="images">
+                                <p class="name"><span class="fonts">{{x.name}} (Quantity:{{x.quantity}})</span><br><span class="fontsm">Requested on {{x.date}}</span><br><button type="button" class="delete" style="background-color: #A777C0;" ng-click="delBook(x.id)">Delete</button></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br /><br />
+            <div class=" col-sm-6 col-xs-12 links">
+                <a href="" ng-click="books_donations()" style="color:black;" class="links">
+                    <b><u>Books Donation Form</u></b>
+                </a>
+            </div>
+            <div class="col-sm-6 col-xs-12 links">
+                <a href="" ng-click="bPrevious()" style="color:black;" class="links">
+                    <b><u>View Your Previous Donations</u></b>
+                </a>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

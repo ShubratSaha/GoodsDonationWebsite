@@ -1,0 +1,54 @@
+<div ng-controller="dashboardCtrl" ng-init="fetchSportPrevious()" style="color: whitesmoke;">
+    <div class="container-fluid">
+        <div class="jumbotron" style="margin-top:50px;height:250px;background-size:cover;color:white;background-image: url(images/sports.jpg);">
+            <h1><b>All Work and No Play</b></h1>
+            <h3><b>Makes Jack a Dull Boy.</b></h3>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse middle col-sm-12 col-md-12 col-xs-12 col-lg-12 middleNavbar" style="width:100%; overflow: auto;">
+        <div class="container-fluid">
+            <div class="navbar-header" style="width:100%">
+                <ul class="nav navbar-nav" style="width:100%;">
+                    <li id="link4-sport"><a href="" id="link1-sport" ng-click="clothes_donations()"><img src="images/Clothes.png" class="icon">&nbsp;<b class="hidden-xs">Clothes</b></a></li>
+                    <li id="link4-sport"><a href="" id="link1-sport" ng-click="books_donations()"><img src="images/Books.png" class="icon">&nbsp;<b class="hidden-xs">Books</b></a></li>
+                    <li id="link4-sport"><a href="" id="link1-sport" ng-click="electronics_donations()"><img src="images/electronics.png" class="icon">&nbsp;<b class="hidden-xs">Electronics</b></a></li>
+                    <li id="link4-sport"><a href="" id="link1-sport" ng-click="medicines_donations()"><img src="images/medicines.png" class="icon">&nbsp;<b class="hidden-xs">Medicines</b></a></li>
+                    <li id="link4-sport"><a href="" id="link1-sport" ng-click="furnitures_donations()"><img src="images/furniture.png" class="icon">&nbsp;<b class="hidden-xs">Furniture</b></a></li>
+                    <li id="link3-sport"><a href="" id="link1-sport" style="color:#FF8341;" ng-click="sports_donations()"><img src="images/sports.png" class="icon">&nbsp;<b class="hidden-xs">Sports</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron" style="background-color:#FFE3D4;">
+            <div class="donations" style="background-color:#FFE3D4;">
+                <span style="text-align: center;color:#FF8341;">
+                    <h1>{{message}}</h1>
+                </span>
+                <br>
+                <table>
+                    <tr class="tablerow" ng-repeat="x in sportPrevious">
+                        <td>
+                            <div style="color:white;"><br /><img src="icon-clothes.jpg" class="images"><br>
+                                <p class="name"><span class="fonts"><br>{{x.name}} (Quantity:{{x.quantity}})</span><br /><span class="fontsm"><br class="space">Donated on {{x.date}}<br></span></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br /><br />
+            <div class=" col-sm-6 col-xs-12 links">
+                <a href="" ng-click="sports_donations()" style="color:black;" class="links">
+                    <b><u>Sports Donation Form</u></b>
+                </a>
+            </div>
+            <div class="col-sm-6 col-xs-12 links">
+                <a href="" ng-click="sPending()" style="color:black;" class="links">
+                    <b><u>View Your Pending Donations</u></b>
+                </a>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

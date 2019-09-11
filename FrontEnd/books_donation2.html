@@ -1,0 +1,59 @@
+<div ng-controller="dashboardCtrl" style="color: whitesmoke;">
+    <div class="container-fluid">
+        <div class="jumbotron" style="margin-top:50px;height:250px;background-size:cover;color:white;background-image: url(images/books-wp.png);">
+            <h1><b>Educate The Needy</b></h1>
+            <h3><b>From your books.</b></h3>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse middle col-sm-12 col-md-12 col-xs-12 col-lg-12 middleNavbar" style="width:100%; overflow: auto;">
+        <div class="container-fluid">
+            <div class="navbar-header" style="width:100%">
+                <ul class="nav navbar-nav" style="width:100%;text-align: left;">
+                    <li id="link4-book"><a href="" id="link1-book" ng-click="clothes_donations()"><img src="images/clothes.png" class="icon">&nbsp;<b class="hidden-xs">Clothes</b></a></li>
+                    <li id="link3-book"><a href="" id="link1-book" style="color:#A777C0;" ng-click="books_donations()"><img src="images/books.png" class="icon">&nbsp;<b class="hidden-xs">Books</b></a></li>
+                    <li id="link4-book"><a href="" id="link1-book" ng-click="electronics_donations()"><img src="images/electronics.png" class="icon">&nbsp;<b class="hidden-xs">Electronic</b></a></li>
+                    <li id="link4-book"><a href="" id="link1-book" ng-click="medicines_donations()"><img src="images/medicines.png" class="icon">&nbsp;<b class="hidden-xs">Medicines</b></a></li>
+                    <li id="link4-book"><a href="" id="link1-book" ng-click="furnitures_donations()"><img src="images/furniture.png" class="icon">&nbsp;<b class="hidden-xs">Furniture</b></a></li>
+                    <li id="link4-book"><a href="h" id="link1-book" ng-click="sports_donations()"><img src="images/sports.png" class="icon">&nbsp;<b class="hidden-xs">Sports</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron" style="background-color:#F0D3FF; text-align:center;">
+            <p id="heading-book">&nbsp;&nbsp;&nbsp;<b>Books Donation Form<br>
+                    <font style="font-size: 16px;color:#A777C0;">{{message}}</font>
+                </b></p>
+            <form class="form-horizontal" action="">
+                <div class="form-group form-book">
+                    <div>
+                        <input type="name" class="form-control book" placeholder="Book's name" ng-model="bookName">{{errbookName}}
+                    </div>
+                </div>
+                <div class="form-group form-book">
+                    <div>
+                        <input type="quantity" class="form-control book" placeholder="Quantity" ng-model="bookQuan">{{errbookQuan}}
+                    </div>
+                </div>
+                <div class="form-group form-book">
+                    <div>
+                        <button type="submit" class="btn btn-default" style="background-color:#A777C0;color:white;" ng-click="book_new()"><b>Submit</b></button>
+                    </div>
+                </div>
+            </form>
+            <br />
+            <div class="col-sm-6 col-xs-12 links">
+                <a href="" ng-click="bPrevious()" style="color:black;" class="links">
+                    <b><u>View Your Previous Donations</u></b>
+                </a>
+            </div>
+            <div class="col-sm-6 col-xs-12 links">
+                <a href="" ng-click="bPending()" style="color:black;" class="links">
+                    <b><u>View Your Pending Donations</u></b>
+                </a>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

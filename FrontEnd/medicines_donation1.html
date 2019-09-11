@@ -1,0 +1,59 @@
+<div ng-controller="dashboardCtrl" style="color: whitesmoke;">
+    <div class="container-fluid">
+        <div class="jumbotron" style="margin-top:50px;height:250px;background-size:cover;color:white;background-image: url(images/blood.jpg);">
+            <h1><b>Donate Medicines</b></h1>
+            <h3><b>And Save Lives</b></h3>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse middle col-sm-12 col-md-12 col-xs-12 col-lg-12 middleNavbar" style="width:100%; overflow: auto;">
+        <div class="container-fluid">
+            <div class="navbar-header" style="width:100%">
+                <ul class="nav navbar-nav" style="width:100%;">
+                    <li id="link4-medicine"><a href="" id="link1-medicine" ng-click="clothes_donations()"><img src="images/Clothes.png" class="icon">&nbsp;<b class="hidden-xs">Clothes</b></a></li>
+                    <li id="link4-medicine"><a href="" id="link1-medicine" ng-click="books_donations()"><img src="images/Books.png" class="icon">&nbsp;<b class="hidden-xs">Books</b></a></li>
+                    <li id="link4-medicine"><a href="" id="link1-medicine" ng-click="electronics_donations()"><img src="images/electronics.png" class="icon">&nbsp;<b class="hidden-xs">Electronics</b></a></li>
+                    <li id="link3-medicine"><a href="" id="link1-medicine" style="color:#FF6060;" ng-click="medicines_donations()"><img src="images/medicines.png" class="icon">&nbsp;<b class="hidden-xs">Medicines</b></a></li>
+                    <li id="link4-medicine"><a href="" id="link1-medicine" ng-click="furnitures_donations()"><img src="images/furniture.png" class="icon">&nbsp;<b class="hidden-xs">Furniture</b></a></li>
+                    <li id="link4-medicine"><a href="" id="link1-medicine" ng-click="sports_donations()"><img src="images/sports.png" class="icon">&nbsp;<b class="hidden-xs">Sports</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron" style="background-color:#FFBFBF; text-align:center;">
+            <p id="heading-medicine">&nbsp;&nbsp;&nbsp;<b>Medicines Donation Form<br>
+                    <font style="font-size: 16px;color:#FF6060;">{{message}}</font>
+                </b></p>
+            <form class="form-horizontal" action="">
+                <div class="form-group form-medicine">
+                    <div>
+                        <input type="text" class="form-control medicine" required placeholder="Medicine's name" ng-model="medicineName">{{errmedicineName}}
+                    </div>
+                </div>
+                <div class="form-group form-medicine">
+                    <div>
+                        <input type="text" class="form-control medicine" required placeholder="Quantity of tablets" ng-model="medicineQuan">{{errmedicineQuan}}
+                    </div>
+                </div>
+                <div class="form-group form-medicine">
+                    <div>
+                        <button type="submit" class="btn btn-default" style="background-color:#FF6060;color:white;" ng-click="medicine_new()"><b>Submit</b></button>
+                    </div>
+                </div>
+            </form>
+            <br />
+            <div class="col-sm-6 col-xs-12 links">
+                <a href="" ng-click="mPrevious()" style="color:black;" class="links">
+                    <b><u>View Your Previous Donations</u></b>
+                </a>
+            </div>
+            <div class="col-sm-6 col-xs-12 links">
+                <a href="" ng-click="mPending()" style="color:black;" class="links">
+                    <b><u>View Your Pending Donations</u></b>
+                </a>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

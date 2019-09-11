@@ -1,0 +1,268 @@
+<div ng-controller="loginCtrl">
+    <div class="container-fluid headDiv">
+        <br><br><br>
+        <div style="float: right;">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+        </div><br style="font-size: 1px;">
+        <h1 class="title">giftAid...</h1>
+        <h6 class="sub-title"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a donation website</h6><br>
+        <div class="search-form">
+            <input type="text" placeholder="&nbsp;&nbsp;Enter your location..." class="searchBar"><button type="submit" class="glyphicon glyphicon-search searchBtn"></button>
+        </div>
+    </div>
+    <div class="container-fluid guide">
+        <br>
+        <h1>Let's Get Started</h1>
+        <div class="row">
+            <div class="col-sm-6 col-xs-6 leftDiv1">
+                <p style="float:right;"><br><br><br><br><br><br><br><span class="hidden-xs"><br></span>Create an Account and Join the Family.<br><br><br><br><br><br><br><br><br></p>
+            </div>
+            <div class="col-sm-5 col-xs-5 rightDiv">
+                <img src="images/signupphone1.png" style="margin-left: 3px; height: 350px; float: left;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-xs-6 leftImg1Div">
+                <img src="images/donate.png" style="height: 350px; float: right; margin-right: -13px;">
+            </div>
+            <div class="col-sm-6 col-xs-6 rightDiv">
+                <p style="float:left;margin-left: 10px;"><br><br><br><br><br><br><br><span class="hidden-xs"><br></span>Donate Stuffs with a Single Click.<br><br><br><br><br><br><br><br><br></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-xs-6 leftDiv1">
+                <p style="float:right;"><br><br><br><br><br><br><br><span class="hidden-xs"><br></span>It's our responsibility to give something back to society.<span class="hidden-xs"><br></span><br><br><br><br><br><br><br><br></p>
+            </div>
+            <div class="col-sm-5 col-xs-5 rightDiv">
+                <img src="images/doantion.png" style="height: 350px; float: left; margin-left: 2px;">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid guide">
+        <br>
+        <h1>Your Contributions..</h1>
+        <a href="" ng-click="clothes_donations()">
+            <div class="row">
+                <div class="col-sm-6 col-xs-6 leftDiv" style="background-image: url(images/clothes.jpg); color:white">
+                    <br>
+                    <br class="hidden-xs">
+                    <div style="float:right; text-align: right;">
+                        <p style="font-size: 30px;">Clothes</p><br class="hidden-xs">
+                        <p style="font-size: 20px;">Clean out your closets for charity</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-6 rightDiv">
+                    <img src="images/clothes.png" style="height: 170px; float: left;">
+                </div>
+            </div>
+        </a>
+        <a href="" ng-click="books_donations()">
+            <div class="row">
+                <div class="col-sm-6 col-xs-6 leftImgDiv">
+                    <img src="images/books.png" style="height: 170px; float: right;  margin-right: -15px;">
+                </div>
+                <div class="col-sm-6 col-xs-6" style="background-image: url(images/books-wp.png); color:white ; margin-left=20px; height: 180px;">
+                    <br><br class="hidden-xs">
+                    <div style="float:left; text-align: left;">
+                        <p style="font-size: 30px;">Books</p><br class="hidden-xs">
+                        <p style="font-size: 20px;">Donate a Book, Build a Library for the Needy</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="" ng-click="electronics_donations()">
+            <div class="row">
+                <div class="col-sm-6 col-xs-6 leftDiv" style="background-image: url(images/technology.jpg); color:white">
+                    <br><br class="hidden-xs">
+                    <div style="float:right; text-align: right;">
+                        <p style="font-size: 30px;">Electronics</p><br class="hidden-xs">
+                        <p style="font-size: 20px;">You got New, Donate the Old Ones</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-6 rightDiv">
+                    <img src="images/electronics.png" style="height: 170px; float: left; margin-left: 5px;">
+                </div>
+            </div>
+        </a>
+        <a href="" ng-click="medicines_donations()">
+            <div class="row">
+                <div class="col-sm-6 col-xs-6 leftImgDiv">
+                    <img src="images/medicines.png" style="height: 170px; float: right;  margin-right: -15px; padding-top: 10px;"><br>&nbsp;
+                </div>
+                <div class="col-sm-6 col-xs-6" style="background-image: url(images/medicine.jpg); color:white ; margin-left=20px; height: 180px;">
+                    <br><br class="hidden-xs">
+                    <div style="float:left; text-align: left;">
+                        <p style="font-size: 30px;">Medicines</p><br class="hidden-xs">
+                        <p style="font-size: 20px;">Donate medicines, don't let it expire, it can save lives</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="" ng-click="furnitures_donations()">
+            <div class="row">
+                <div class="col-sm-6 col-xs-6 leftDiv" style="background-image: url(images/furniture.jpg); color:white">
+                    <br><br class="hidden-xs">
+                    <div style="float:right; text-align: right;">
+                        <p style="font-size: 30px;">Furnitures</p><br class="hidden-xs">
+                        <p style="font-size: 20px;">Donate Furniture, Build a home for someone</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-6 rightDiv">
+                    <img src="images/furniture.png" style="height: 170px; float: left; padding-left: 5px; ">
+                </div>
+            </div>
+        </a>
+        <a href="" ng-click="sports_donations()">
+            <div class="row">
+                <div class="col-sm-6 col-xs-6 leftImgDiv">
+                    <img src="images/sports.png" style="height: 170px; float: right;  margin-right: -10px; padding-top: 10px; "><br>&nbsp;
+                </div>
+                <div class="col-sm-6 col-xs-6" style="background-image: url(images/sports.jpg); color:white;height: 180px;">
+                    <br class="hidden-xs"><br class="hidden-xs">
+                    <div style="float:left; text-align: left;">
+                        <p style="font-size: 30px;">Sports</p><br class="hidden-xs">
+                        <p style="font-size: 20px;">Be a Sport, by donating your reusable sports equipments</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <br><br>
+    </div>
+    <div class="container-fluid lastDiv">
+        <div class="row">
+            <div class="leftLastDiv col-md-offset-2 col-md-4 col-sm-offset-4 col-sm-4 col-xs-offset-3 col-xs-9">
+                <h4>Contact Us</h4>
+                <br>
+                <a href=""><span class="glyphicon glyphicon-map-marker"></span>&nbsp; Centurion University, <br>Jatani, Odisha</a><br><br><br>
+                <a href=""><span class="glyphicon glyphicon-earphone"></span>&nbsp; (+91)8700798716 </a><br /><br>
+                <a href=""><span class="glyphicon glyphicon-envelope"></span>&nbsp; contact@giftaid.com</a><br><br>
+                <!--<a href=""><span class="glyphicon glyphicon-user"></span>&nbsp; Staff Login</a><br><br>-->
+                <div style="float: left;">
+                    <a href="" class="fa fa-facebook"></a>
+                    <a href="" class="fa fa-twitter"></a>
+                    <a href="" class="fa fa-google"></a>
+                    <a href="" class="fa fa-linkedin"></a>
+                    <a href="" class="fa fa-youtube"></a>
+                    <a href="" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <div class="rightLastDiv col-md-5 col-sm-5 col-xs-6 hiddenMap">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3745.2558063811684!2d85.70445001471259!3d20.175580121730928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19aec948fe62ef%3A0xb6c968c7957b6b4f!2sCenturion+University+of+Technology+%26+Management+%2C+Bhubaneswar!5e0!3m2!1sen!2sus!4v1553362607370" width="100%" height="280" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="chatbutton" id="btn" onclick="openchat()">Chat with MADS</button>
+        <div class="chatbot" id="chtbt">
+
+            <div><input id="close" type="button" onclick="hide();" value="x"></div>
+            <div class="chatlogs">
+                <div class="chat user">
+                    <div class="chat-message"><span id="user"></span></div>
+                </div>
+                <div class="chat bot">
+                    <div class="chat-message"><span id="chatbot"></span></div>
+                </div>
+            </div>
+            <div style="text-align: center;"><input id="input" type="text" placeholder="SAY SOMETHING...." autocomplete="off" /></div>
+            <script>
+                function hide() {
+                    document.getElementById("chtbt").style.display = "none";
+                    document.getElementById("btn").style.display = "block"
+                }
+
+                function openchat() {
+                    document.getElementById("chtbt").style.display = "block";
+                    document.getElementById("btn").style.display = "none"
+                }
+
+                var trigger = [
+                    ["hi", "hello", "hey", "hii", "Hii", "Hey", "Hello"],
+                    ["how are you"],
+                    ["are you human"],
+                    ["can you help me"],
+                    ["is this site working properly"],
+                    ["i want to donate something"],
+                    ["what materials i can donate here", "what materials can i donate", "things i can donate", ],
+                    ["are those materials are reaching at proper destination"],
+                    ["i want to donate some old cloths"],
+                    ["i want to donate some old books"],
+                    ["i want to donate some old furniture"],
+                    ["i want to donate some old medicine"],
+                    ["i want to donate some old sports products"],
+                    ["i want to suggest you to plants some tree"],
+                    ["does the receiver have to pay any amount"],
+                ];
+                var reply = [
+                    ["Hello"],
+                    ["Fine what about you"],
+                    ["No i m a bot"],
+                    ["How can i help you ?"],
+                    ["Yes, what you want to search"],
+                    ["Yes you can, what you want to donate"],
+                    ["you can donate cloths, books, furniture, medicine,sports product,plants"],
+                    ["Yes, its giving to the receiver who actually need it"],
+                    ["You have to login first ,then go to the donation section and choose cloth donation"],
+                    ["You have to login first ,go to the donation section and choose books donation"],
+                    ["You have to login first ,go to the donation section and choose furniture donation"],
+                    ["You have to login first ,go to the donation section and choose medicine donation"],
+                    ["You have to login first ,go to the donation section and choose sports donation"],
+                    ["You have to login first ,go to the Go green plantation and suggest your plants name"],
+                    ["No, you just have to choose the materials and it will be provided to you"],
+                ];
+                var alternative = ["I didn't get you", "I am unable to understand you"];
+
+
+                document.querySelector("#input").addEventListener("keypress", function(e) {
+                    var key = e.which || e.keyCode;
+                    if (key === 13) {
+                        var input = document.getElementById("input").value;
+                        document.getElementById("user").innerHTML = input;
+                        output(input);
+                    }
+                });
+
+                function output(input) {
+                    try {
+                        if (/\s/.test(input))
+                            document.getElementById("chatbot").innerHTML = "Atleast write something...";
+                        var product = input + "=" + eval(input);
+                    } catch (e) {
+                        var text = (input.toLowerCase()).replace(/[^\w\s\d]/gi, "");
+                        text = text.replace(/ a /g, " ").replace(/whats/g, "what is");
+                        if (compare(trigger, reply, text)) {
+                            var product = compare(trigger, reply, text);
+                        } else {
+                            var product = alternative[Math.floor(Math.random() * alternative.length)];
+                        }
+                    }
+                    if (product != "=undefined") {
+                        document.getElementById("chatbot").innerHTML = product;
+                    } else {
+                        document.getElementById("chatbot").innerHTML = "Atleast write something...";
+                    }
+                    document.getElementById("input").value = "";
+                }
+
+                function compare(arr, array, string) {
+                    var item;
+                    for (var x = 0; x < arr.length; x++) {
+                        for (var y = 0; y < array.length; y++) {
+                            if (arr[x][y] == string) {
+                                items = array[x];
+                                item = items[Math.floor(Math.random() * items.length)];
+                            }
+                        }
+                    }
+                    return item;
+                }
+
+            </script>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div ng-controller="dashboardCtrl" ng-init="fetchClothPending()" style="color: whitesmoke;">
+    <div class="container-fluid">
+        <div class="jumbotron" style="margin-top:50px;height:250px;background-size:cover;color:white;background-image: url(clothes.jpg);">
+            <h1><b>Style The Needy</b></h1>
+            <h3><b>From something in your closet.</b></h3>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse middle col-sm-12 col-md-12 col-xs-12 col-lg-12 middleNavbar" style="width:100%; overflow: auto;">
+        <div class="container-fluid">
+            <div class="navbar-header" style="width:100%">
+                <ul class="nav navbar-nav" style="width:100%;">
+                    <li id="link3-cloth"><a href="" id="link1-cloth" ng-click="clothes_donations()" style="color:#80BEBD;"><img src="images/clothes.png" class="icon">&nbsp;<b class="hidden-xs">Clothes</b></a></li>
+                    <li id="link4-cloth"><a href="" id="link1-cloth" ng-click="books_donations()"><img src="images/books.png" class="icon">&nbsp;<b class="hidden-xs">Books</b></a></li>
+                    <li id="link4-cloth"><a href="" id="link1-cloth" ng-click="electronics_donations()" electronics><img src="images/electronics.png" class="icon">&nbsp;<b class="hidden-xs">Electronics</b></a></li>
+                    <li id="link4-cloth"><a href="" id="link1-cloth" ng-click="medicines_donations()"><img src="images/medicines.png" class="icon">&nbsp;<b class="hidden-xs">Medicines</b></a></li>
+                    <li id="link4-cloth"><a href="" id="link1-cloth" ng-click="furnitures_donations()"><img src="images/furniture.png" class="icon">&nbsp;<b class="hidden-xs">Furniture</b></a></li>
+                    <li id="link4-cloth"><a href="" id="link1-cloth" ng-click="sports_donations()"><img src="images/sports.png" class="icon">&nbsp;<b class="hidden-xs">Sports</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron" style="background-color:#E8F6F6;">
+            <div class="donations" style="background-color:#E8F6F6;">
+                <span style="text-align: center;color:#80BEBD;">
+                    <h1>{{message}}</h1>
+                </span>
+                <br>
+                <span style="text-align: center;color:#80BEBD;">
+                    <h4>{{delmsg}}</h4>
+                </span>
+                <table>
+                    <tr class="tablerow" ng-repeat="x in clothPending">
+                        <td>
+                            <div style="color:white;"><br /><img src="icon-clothes.jpg" class="images"><br>
+                                <p class="name"><span class="fonts"><br>{{x.name}} ({{x.quantity}})</span><br /><span class="fontsm"><br class="space">Requested on {{x.date}}<br></span><button type="button" class="delete" ng-click="delCloth(x.id)">Delete</button></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br /><br />
+            <div class=" col-sm-6 col-xs-12 links">
+                <a href="" ng-click="clothes_donations()" style="color:black;" class="links">
+                    <b><u>Clothes Donation Form</u></b>
+                </a>
+            </div>
+            <div class="col-sm-6 col-xs-12 links">
+                <a href="" ng-click="cPrevious()" style="color:black;" class="links">
+                    <b><u>View Your Previous Donations</u></b>
+                </a>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
